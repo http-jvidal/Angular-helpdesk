@@ -10,15 +10,13 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class SignupComponent {
 
-
   user = {} as User;
   users!: User[];
-
-
 
   constructor(private userService: UserService){
 
   }
+
   saveUser(form: NgForm) {
     if(this.user.id !== undefined){
       this.userService.updateUser(this.user).subscribe( () => {
