@@ -1,0 +1,110 @@
+.user__icon-wraper{
+  position: relative;
+}
+
+
+
+.user__bar-login{
+  width: 100%;
+  height: 10px;
+  background-color: #3f2b61;
+  position: relative;
+  z-index: 1;
+}
+.user__icon{
+  z-index: 2;
+  border-radius: 50%;
+  width: 135px;
+  height: 135px;
+  background-size: 100% 100%;
+  position: absolute;
+  top: -77px;
+  left: 50%;
+  margin-left: calc(-135px / 2);
+
+}
+.user__input, .user__input1{
+  display: flex;
+
+}
+
+.user__input, .user__input1{
+  margin-top: 20px;
+  width: 100%;
+  position: relative;
+
+
+}
+.user__input input .name, .user__input input .login{
+  margin-right: 8rem;
+}
+.user__input input, .user__input1 input{
+  width: 100%;
+  height: 62px;
+  background-color: white;
+  border-radius: 3.125rem;
+  padding: 0 40px 0 20px;
+  border: 0;
+  font-size: 1.2rem;
+}
+
+.user__input:hover{
+  -webkit-box-shadow: 24px 27px 50px -28px rgba(0,0,0,1);
+  -moz-box-shadow: 24px 27px 50px -28px rgba(0,0,0,1);
+  box-shadow: 24px 27px 50px -20px rgba(0,0,0,1);
+
+}
+.icon-input{
+  width: 43px;
+  height: 43px;
+  position: absolute;
+  right: 16.2rem;
+  top: 10px;
+  background-size: 100% 100%;
+}
+.icon-input1{
+  width: 43px;
+  height: 43px;
+  position: absolute;
+  right: 8px;
+  top: 10px;
+  background-size: 100% 100%;
+
+}
+
+input[type=submit], input[type=button], .inputs > a{
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: 60px;
+  border-radius: 50px;
+  background-image: linear-gradient(50deg, #d15049 0%, #73408f 70%, #a34fc9 100%);
+  background-position: center center;
+  background-size: cover;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none solid rgb(255, 255, 255);
+  text-align: center;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.inputs{
+  display: flex;
+
+}
+
+.input:focus{
+  outline: 0;
+  border: 0;
+}
+
+.user-signup{
+  text-align: center;
+  padding-top: 3.4rem;
+  margin-bottom: -3rem;
+}
+
+
+

@@ -1,0 +1,27 @@
+<section class="login__container">
+  <div class="user__icon-wraper">
+      <div class="user__bar-login"></div>
+      <div class="user__icon"style="background-image: url(/assets/icon-1.png);"></div>
+      <h3 class="user-signup">Faça seu cadastro aqui</h3>
+  </div>
+
+
+<form id="add-form" (ngSubmit)="form.form.valid && saveUser(form)" #form="ngForm" novalidate>
+
+  <div class="user__input">
+      <input type="text" placeholder="Nome" name='name' id="name">
+      <input type="text" placeholder="Departamento" name='departament' id="department">
+  </div>
+  <div class="user__input1">
+      <input type="text" placeholder="Login" name="login" id="login" />
+      <div class="icon-input" style="background-image: url(./assets/icon-1.png);"></div>
+      <input type="password" placeholder="Senha" name="senha" id="senha" />
+      <div class="icon-input1" style="background-image: url(./assets/lock-1.png);"></div>
+  </div> <!--Input-->
+  <br>
+  <br>
+  <div class='inputs'>
+      <input [routerLink]="['/login']" type="button" name="acao" value="Voltar para Login!"/>
+      <input type="submit" name='registro' value="Registrar" />
+  </div>
+</form>

@@ -1,0 +1,81 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="bradcrumb-item active" aria-currten="page">Gerenciamento de Usuários</li>
+  </ol>
+</nav>
+
+<div class="container">
+  <div class="card list-user">
+    <h5 class="card-header">Lista de Usuários</h5>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Login</th>
+          <th scope="col">Departamento</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.login }}</td>
+          <td>{{ user.departament }} </td>
+
+          <td>
+            <button type="button" class=" btn btn-warning btn-sm" (click)="editUser(user)">Editar Usuário</button>
+            <button type="button" class="btn btn-danger btn-sm ml-5" (click)="deleteUser(user)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card add-user">
+    <h5 class="card-header">Adicionar/Atualizar usuários</h5>
+    <div class="card-body">
+
+      <form id="add-form" (ngSubmit)="f.form.valid && saveUser(f)" #f="ngForm" novalidate >
+      <div class="form-group">
+        <label for="id">Id</label>
+        <input type="text" [(ngModel)] = "user.id" name="id" id="id" #id="ngModel"required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && id.invalid}" placeholder="Digite o Id">
+          <div *ngIf="f.submitted && id.invalid" class="invalid-feedback">
+            <div *ngIf="id.errors?.['required']"></div>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" [(ngModel)]="user.name" id="name" name="name" #name="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && name.invalid}" placeholder="Digite o Nome">
+          <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
+            <div *ngIf="name.errors?.['required']" class="color-red">Nome é obrigatório</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="login">Login</label>
+        <input type="text" [(ngModel)]="user.login" id="login" name="login" #login="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && login.invalid}" placeholder="Digite o Login">
+          <div *ngIf="f.submitted && login.invalid" class="invalid-feedback">
+            <div *ngIf="login.errors?.['required']">Login é obrigatório</div>
+
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="departamento">Departamento</label>
+        <input type="text" [(ngModel)] = "user.departament" id="departamento" name="departamento" #departamento="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && departamento.invalid}" placeholder="Digite o Departamento">
+          <div *ngIf="f.submitted && departamento.invalid" class="invalid-feedback"></div>
+            <div *ngIf="departamento.errors?.['required']">Departamento é obrigatório</div>
+      </div>
+
+      <input class="btn btn-primary mt-4" type="submit" value="Salvar">
+    </form>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,25 @@
+<section class="login__container">
+  <div class="user__icon-wraper">
+      <div class="user__bar-login"></div>
+      <div class="user__icon"style="background-image: url(/assets/icon-1.png);"></div>
+  </div>
+
+  <form >
+      <h3>Painel De Controle</h3>
+
+      <div class="user__input">
+          <input type="text" placeholder="Login" name="login" class="form-control" />
+          <div class="icon-input" style="background-image: url(/assets/icon-1.png);"></div>
+      </div>
+      <div class="user__input">
+          <input type="password" placeholder="Senha" name="senha" />
+          <div class="icon-input" style="background-image: url(/assets/lock-1.png);"></div>
+      </div> <!-- Input -->
+      <br>
+      <br>
+      <div class="inputs">
+          <input  type="submit" name="acao" value="Logar!" >
+          <button [routerLink]="['/signup']" type="button"  name="acao" class="btn btn-success">Registrar</button>
+      </div>
+  </form>
+</section>
