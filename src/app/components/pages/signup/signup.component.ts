@@ -18,10 +18,9 @@ export class SignupComponent {
 
   constructor(private userService: UserService){
 
-    
   }
   saveUser(form: NgForm) {
-    if(this.user.login !== undefined){
+    if(this.user.id !== undefined){
       this.userService.updateUser(this.user).subscribe( () => {
         this.cleanForm(form);
       });

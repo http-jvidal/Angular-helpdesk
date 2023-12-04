@@ -15,11 +15,11 @@
           <div *ngIf="name.errors?.['required']">Nome é obrigatório</div>
         </div>
 
-      <input type="text" [(ngModel)]="user['departament_id']" #departamento="ngModel" required class="form-control" [ngClass]="{
-        'is-invalid': form.submitted && departamento.invalid
-      }" placeholder="Departamento" name='departament' id="department">
+        <input type="text" [(ngModel)]="user['departament_id']" #departamento="ngModel" required class="form-control" [ngClass]="{
+          'is-invalid': form.submitted && departamento.invalid
+        }" placeholder="Departamento" name='departament' id="department">
         <div *ngIf="form.submitted && departamento.invalid" class="invalid-feedback">
-          <div *ngIf="departamento.errors?.['required']"> Departamento é obrigatório</div>
+          <div *ngIf="departamento.errors?.['required']">Departamento é obrigatório</div>
         </div>
   </div>
   <div class="form-group, user__input1">
@@ -38,9 +38,7 @@
           <div *ngIf="password.errors?.['required']">Senha é obrigatório</div>
         </div>
       <div class="icon-input1" style="background-image: url(./assets/lock-1.png);"></div>
-
   </div>
-
   <!--Input-->
   <br>
   <br>

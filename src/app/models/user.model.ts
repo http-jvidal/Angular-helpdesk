@@ -3,6 +3,5 @@ export interface User {
   name: String;
   login: String;
   password: String;
-  departament_id: Number;
-  
+  departament_id: Number
 }
