@@ -16,6 +16,7 @@
           <th scope="col">Nome</th>
           <th scope="col">Login</th>
           <th scope="col">Departamento</th>
+          <th scope="col"></th>
         </tr>
       </thead>
 
@@ -24,7 +25,7 @@
           <td>{{ user.id }}</td>
           <td>{{ user.name }}</td>
           <td>{{ user.login }}</td>
-          <td>{{ user.departament }} </td>
+          <td>{{ user['departament_id'] }} </td>
 
           <td>
             <button type="button" class=" btn btn-warning btn-sm" (click)="editUser(user)">Editar Usuário</button>
@@ -67,7 +68,7 @@
 
       <div class="form-group">
         <label for="departamento">Departamento</label>
-        <input type="text" [(ngModel)] = "user.departament" id="departamento" name="departamento" #departamento="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && departamento.invalid}" placeholder="Digite o Departamento">
+        <input type="text" [(ngModel)]="user['departament_id']" id="departamento" name="departamento" #departamento="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && departamento.invalid}" placeholder="Digite o Departamento">
           <div *ngIf="f.submitted && departamento.invalid" class="invalid-feedback"></div>
             <div *ngIf="departamento.errors?.['required']">Departamento é obrigatório</div>
       </div>

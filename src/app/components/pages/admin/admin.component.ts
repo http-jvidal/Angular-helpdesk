@@ -12,7 +12,7 @@ export class AdminComponent {
 
 
   user = {} as User;
-  users!: User[];
+  users: User[] = [];
 
   constructor(private userService: UserService){
 
@@ -21,6 +21,7 @@ export class AdminComponent {
   ngOnInit(){
     this.getUser();
   }
+
   saveUser(form: NgForm) {
     if(this.user.id !== undefined){
       this.userService.updateUser(this.user).subscribe( () => {

@@ -7,17 +7,41 @@
 
 
 <form id="add-form" (ngSubmit)="form.form.valid && saveUser(form)" #form="ngForm" novalidate>
+  <div class="form-group, user__input">
+      <input type="text" [(ngModel)]="user.name" name='name' id="name" #name="ngModel" required class="form=control" [ngClass]="{
+        'is-invalid': form.submitted && name.invalid
+      } "placeholder="Nome" >
+        <div *ngIf="form.submitted && name.invalid" class="invalid-feedback">
+          <div *ngIf="name.errors?.['required']">Nome é obrigatório</div>
+        </div>
 
-  <div class="user__input">
-      <input type="text" placeholder="Nome" name='name' id="name">
-      <input type="text" placeholder="Departamento" name='departament' id="department">
+      <input type="text" [(ngModel)]="user['departament_id']" #departamento="ngModel" required class="form-control" [ngClass]="{
+        'is-invalid': form.submitted && departamento.invalid
+      }" placeholder="Departamento" name='departament' id="department">
+        <div *ngIf="form.submitted && departamento.invalid" class="invalid-feedback">
+          <div *ngIf="departamento.errors?.['required']"> Departamento é obrigatório</div>
+        </div>
   </div>
-  <div class="user__input1">
-      <input type="text" placeholder="Login" name="login" id="login" />
-      <div class="icon-input" style="background-image: url(./assets/icon-1.png);"></div>
-      <input type="password" placeholder="Senha" name="senha" id="senha" />
+  <div class="form-group, user__input1">
+      <input type="text" [(ngModel)]="user.login" #login="ngModel" required class="form-control" [ngClass]="{
+        'is=invalid': form.submitted && login.invalid
+      }" placeholder="Login" name="login" id="login" />
+      <div *ngIf="form.submitted && login.invalid" class="invalid-feedback">
+        <div *ngIf="login.errors?.['required']">Login é obrigatório</div>
+      </div>
+
+      <div class="form-group, icon-input" style="background-image: url(./assets/icon-1.png);"></div>
+      <input type="password" [(ngModel)]="user.password" #password="ngModel" required class="form-control" [ngClass]="{
+        'is-invalid': form.submitted && password.invalid
+      }" placeholder="Senha" name="senha" id="senha" />
+        <div *ngIf="form.submitted && password.invalid" class="invalid-feedback">
+          <div *ngIf="password.errors?.['required']">Senha é obrigatório</div>
+        </div>
       <div class="icon-input1" style="background-image: url(./assets/lock-1.png);"></div>
-  </div> <!--Input-->
+
+  </div>
+
+  <!--Input-->
   <br>
   <br>
   <div class='inputs'>

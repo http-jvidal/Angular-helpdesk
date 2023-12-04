@@ -3,14 +3,6 @@ export interface User {
   name: String;
   login: String;
   password: String;
-  departament: {
-    id: Number;
-    name: String
-  }
-  ticket: {
-    id: Number;
-    detalhes: String;
-    imagem: String;
-    estado: boolean;
-  }
+  departament_id: Number;
+  
 }

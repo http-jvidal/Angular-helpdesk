@@ -9,12 +9,14 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 })
 export class UserService {
   private usersUrl: string;
+
+
   constructor(private httpClient: HttpClient) {
     this.usersUrl = "http://localhost:8081/api/users"
   }
 
   httpOptions = {
-    _headers: new HttpHeaders({ 'Content-type': 'application/json' }),
+    _headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
     get headers() {
       return this._headers;
     },
@@ -41,7 +43,7 @@ export class UserService {
   }
 
   saveUser(user : User): Observable<User>{
-    return this.httpClient.post<User>(this.usersUrl, JSON.stringify(user), this.httpOptions)
+    return this.httpClient.post<User>(this.usersUrl + '/' , JSON.stringify(user), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
