@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError, retry, throwError } from 'rxjs';
 import { User } from '../models/user.model';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Login } from '../models/login.model';
-import { Departament } from '../models/departament.model';
 
 
 @Injectable({

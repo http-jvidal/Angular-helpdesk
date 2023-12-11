@@ -15,10 +15,8 @@ export class LoginComponent {
   form: any;
   mensagem!: String;
 
-
   user = {} as User;
   users!: User[];
-
 
   constructor(private formBuilder: FormBuilder,
               private userService: UserService,
