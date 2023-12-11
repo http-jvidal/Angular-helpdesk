@@ -1,0 +1,10 @@
+.table, th{
+  text-transform: capitalize;
+}
+
+.buttonEdit:hover{
+  transition: .4s;
+  background-color: cadetblue;
+
+
+}

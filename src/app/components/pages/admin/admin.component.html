@@ -6,10 +6,10 @@
 
 <div class="container">
   <div class="card list-user">
-    <h5 class="card-header">Lista de Usuários</h5>
+    <h5 class="card-header pb-3 mt-2 text-center">Lista de Usuários</h5>
   </div>
   <div class="card-body">
-    <table class="table">
+    <table class="table text-center">
       <thead>
         <tr>
           <th scope="col">Id</th>
@@ -24,12 +24,12 @@
         <tr *ngFor="let user of users">
           <td>{{ user.id }}</td>
           <td>{{ user.name }}</td>
-          <td>{{ user.login }}</td>
-          <td>{{ user['departament_id'] }} </td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.departamento["name"]}} </td>
 
           <td>
-            <button type="button" class=" btn btn-warning btn-sm" (click)="editUser(user)">Editar Usuário</button>
-            <button type="button" class="btn btn-danger btn-sm ml-5" (click)="deleteUser(user)">Delete</button>
+            <button type="button" class="buttonEdit btn btn-warning btn-sm" (click)="editUser(user)">Editar Usuário</button>
+            <button type="button" class="buttonDelete btn btn-danger btn-sm ml-5" (click)="deleteUser(user)">Delete</button>
           </td>
         </tr>
       </tbody>
@@ -59,7 +59,7 @@
 
       <div class="form-group">
         <label for="login">Login</label>
-        <input type="text" [(ngModel)]="user.login" id="login" name="login" #login="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && login.invalid}" placeholder="Digite o Login">
+        <input type="text" [(ngModel)]="user.username" id="login" name="login" #login="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && login.invalid}" placeholder="Digite o Login">
           <div *ngIf="f.submitted && login.invalid" class="invalid-feedback">
             <div *ngIf="login.errors?.['required']">Login é obrigatório</div>
 
@@ -68,7 +68,7 @@
 
       <div class="form-group">
         <label for="departamento">Departamento</label>
-        <input type="text" [(ngModel)]="user['departament_id']" id="departamento" name="departamento" #departamento="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && departamento.invalid}" placeholder="Digite o Departamento">
+        <input type="text" [(ngModel)]="user.departamento" id="departamento" name="departamento" #departamento="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && departamento.invalid}" placeholder="Digite o Departamento">
           <div *ngIf="f.submitted && departamento.invalid" class="invalid-feedback"></div>
             <div *ngIf="departamento.errors?.['required']">Departamento é obrigatório</div>
       </div>

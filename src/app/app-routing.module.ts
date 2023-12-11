@@ -5,6 +5,7 @@ import { SignupComponent } from './components/pages/signup/signup.component';
 import { AdminComponent } from './components/pages/admin/admin.component';
 
 const routes: Routes = [
+  {path: '', pathMatch: "full" , redirectTo: 'login'},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'admin', component: AdminComponent},

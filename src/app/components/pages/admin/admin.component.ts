@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Departament } from 'src/app/models/departament.model';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 
@@ -14,6 +15,7 @@ export class AdminComponent {
   user = {} as User;
   users: User[] = [];
 
+  departament: Departament[] = [];
   constructor(private userService: UserService){
 
   }
@@ -21,6 +23,7 @@ export class AdminComponent {
   ngOnInit(){
     this.getUser();
   }
+
 
   saveUser(form: NgForm) {
     if(this.user.id !== undefined){

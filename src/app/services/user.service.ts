@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError, retry, throwError } from 'rxjs';
 import { User } from '../models/user.model';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Login } from '../models/login.model';
+import { Departament } from '../models/departament.model';
 
 
 @Injectable({
@@ -9,10 +11,11 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 })
 export class UserService {
   private usersUrl: string;
-
+  authenticated = false;
 
   constructor(private httpClient: HttpClient) {
     this.usersUrl = "http://localhost:8081/api/users"
+
   }
 
   httpOptions = {
@@ -32,7 +35,6 @@ export class UserService {
         catchError(this.handleError)
       );
   }
-
 
   getUserById(id: number): Observable<User>{
     return this.httpClient.get<User>(this.usersUrl + '/' + id)
@@ -63,7 +65,7 @@ export class UserService {
       .pipe(
         retry(1),
         catchError(this.handleError)
-      )
+      );
   }
 
   handleError(error: HttpErrorResponse){
@@ -75,5 +77,15 @@ export class UserService {
     console.log(errorMessage);
     return throwError(errorMessage);
   }
+
+
+  login(user: User): Observable<User>{
+      return this.httpClient.post<User>(this.usersUrl + '/login', JSON.stringify(user), this.httpOptions)
+            .pipe(
+              retry(1),
+              catchError(this.handleError)
+            );
+  }
+
 
 }

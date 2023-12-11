@@ -5,7 +5,7 @@
       <h3 class="painel-login">Painel Login</h3>
   </div>
 
-  <form [formGroup]="form" (ngSubmit)="logar()">
+  <form [formGroup]="form" (ngSubmit)="logar(user)">
 
       <div class="form-group, user__input">
           <input type="text"  placeholder="Login" name="login" class="form-control" formControlName="login" requiredminLenght="5"/>
@@ -18,7 +18,7 @@
       <br>
       <br>
       <div class="inputs">
-          <input class="btn btn-success" type="submit" [disabled]="!form.valid" name="acao" value="Logar!" >
+          <input class="btn btn-success" type="submit"  name="acao" value="Logar!" >
           <button [routerLink]="['/signup']" type="button"  name="acao" class="btn btn-success">Registrar</button>
       </div>
 
