@@ -27,7 +27,7 @@ export class UserService {
   }
 
   public getUsers(): Observable<User[]>{
-    return this.httpClient.get<User[]>(this.usersUrl)
+    return this.httpClient.get<User[]>(this.usersUrl + '/')
       .pipe(
         retry(2),
         catchError(this.handleError)

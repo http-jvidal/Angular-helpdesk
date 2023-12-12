@@ -7,5 +7,10 @@ export interface User {
     id: Number;
     name: String;
   }
-  ticket_id: Number;
+  ticket: {
+    id: Number;
+    name: String;
+    imagem: String;
+    url: String;
+  }
 }
