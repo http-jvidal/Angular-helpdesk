@@ -7,12 +7,15 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { SignupComponent } from './components/pages/signup/signup.component';
 import { AdminComponent } from './components/pages/admin/admin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PainelComponent } from './components/pages/painel/painel.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
     AdminComponent,
+    PainelComponent,
   ],
   imports: [
     BrowserModule,

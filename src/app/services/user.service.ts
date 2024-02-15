@@ -1,19 +1,20 @@
-import { Injectable } from '@angular/core';
 import { Observable, catchError, retry, throwError } from 'rxjs';
 import { User } from '../models/user.model';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-
+import { Injectable } from '@angular/core';
+import { LoginDTO } from '../DTO/Login.DTO';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn:'root'
 })
+
 export class UserService {
   private usersUrl: string;
+
   authenticated = false;
 
   constructor(private httpClient: HttpClient) {
-    this.usersUrl = "http://localhost:8081/api/users"
-
+    this.usersUrl = "http://localhost:8082/api/users"
   }
 
   httpOptions = {
@@ -77,13 +78,7 @@ export class UserService {
   }
 
 
-  login(user: User): Observable<User>{
-      return this.httpClient.post<User>(this.usersUrl + '/login', JSON.stringify(user), this.httpOptions)
-            .pipe(
-              retry(1),
-              catchError(this.handleError)
-            );
-  }
+  
 
 
 }
