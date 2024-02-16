@@ -12,13 +12,13 @@
           <div class="icon-input" style="background-image: url(/assets/icon-1.png);"></div>
       </div>
       <div class="form-group, user__input">
-          <input [(ngModel)]="user.password" type="password" placeholder="Senha" name="senha" class="form-control" formControlName="senha" requiredminLenght="12" />
+          <input [(ngModel)]="user.password" type="password" placeholder="Senha" name="senha" class="form-control" formControlName="senha" requiredminLenght="5" />
           <div class="icon-input" style="background-image: url(/assets/lock-1.png);"></div>
       </div> <!-- Input -->
       <br>
       <br>
       <div class="inputs">
-          <input [routerLink]="['/painel']"  class="btn btn-success" type="submit"  name="acao" value="Logar!" >
+          <input class="btn btn-success" type="submit"  name="acao" value="Logar!" >
           <button [routerLink]="['/signup']" type="button"  name="acao" class="btn btn-success">Registrar</button>
       </div>
 

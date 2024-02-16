@@ -2,14 +2,21 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  styleUrls: ['./admin.component.css'],
 })
 export class AdminComponent {
 
+  estadoChamados = [
+    'Aberto', 'Fechado'
+  ]
+  estadoSelecionado!: String;
+  
   user = {} as User;
   users: User[] = [];
 
@@ -19,6 +26,10 @@ export class AdminComponent {
 
   ngOnInit(){
     this.getUser();
+  }
+
+  updateTicket(){
+
   }
 
 
@@ -36,6 +47,7 @@ export class AdminComponent {
     }
   }
 
+  
   getUser(){
     this.userService.getUsers().subscribe((users: User[]) => {
       this.users = users;

@@ -1,61 +1,26 @@
-  <!-- Navbar -->
-<ul class="nav justify-content-center bg-dark ">
-    <li class="nav-item text-light" >
-        <a class="nav-link" href="#">Helpdesk</a>
-    </li>
-    <li class="nav-item text-light">
-        <a class="nav-link" href="#">Tickets</a>
-    </li>
-    <li class="nav-item text-light">
-        <a class="nav-link" href="#">FAQs</a>
-    </li>
-    <li class="nav-item text-light">
-        <a class="nav-link" href="#">Contato</a>
-    </li>
-    <li class="nav-item text-light">
-        <a class="nav-link" href="#">Sobre</a>
-    </li>
 
-<!-- Dashboard -->
-<div class="container">
-    <div class="dashboard">
-        <h2>Painel de Controle</h2>
-        <!-- Add dashboard metrics and statistics here -->
-    </div>
+<form #formDirective="ngForm" class="container-s">
+    
+        <mat-form-field class="mat-label" >
+            <mat-label>Nome</mat-label>
+            <input matInput [(ngModel)]="ticket.name" name="nome" >
+        </mat-form-field>
+    
+        <mat-form-field class="mat-label">
+            <mat-label>Departamento</mat-label>
+            <input matInput [(ngModel)]="ticket.departamento" name="departamento">
+        </mat-form-field>
+        <mat-form-field class="mat-label">
+            <mat-label>Contato</mat-label>
+            <input matInput [(ngModel)]="ticket.contato" name="contato">
+        </mat-form-field>
+        <mat-form-field class="mat-label">
+            <mat-label>Detalhes do chamado</mat-label>
+            <textarea matInput [(ngModel)]="ticket.detalhes" name="detalhes"></textarea>
+        </mat-form-field>
+        
+        <button class="btn btn-success" (click)="createTicket()">Abrir Chamado</button>
+</form>
 
-    <!-- Main Content Area -->
-    <div class="row">
-        <!-- Tickets Section -->
-        <div class="col-md-8">
-            <div class="card">
-                <h3 class="section-title" >Tickets</h3>
-            </div>
-        </div>
-        <!-- Knowledge Base Section -->
-        <div class="col-md-4">
-            <div class="card">
-                <h3 class="section-title">Base de Conhecimento</h3>
-                <!-- Add FAQs, search box, and knowledge base articles here -->
-            </div>
-        </div>
-    </div>
 
-    <!-- Live Chat -->
-    <div class="card">
-        <h3 class="section-title">Chat ao Vivo</h3>
-        <!-- Add live chat functionality here if available -->
-    </div>
-
-    <!-- Contact Form -->
-    <div class="card">
-        <h3 class="section-title">Formulário de Contato</h3>
-        <!-- Add contact form here -->
-    </div>
-</div>
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <span>© 2024 Helpdesk. Todos os direitos reservados.</span>
-    </div>
-</footer>
+    

@@ -10,7 +10,9 @@ export interface User {
   ticket: {
     id: Number;
     name: String;
+    estado: boolean;
     imagem: String;
     url: String;
+    detalhes: String
   }
 }

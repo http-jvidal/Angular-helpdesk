@@ -18,16 +18,11 @@ export class SignupComponent {
   }
 
   saveUser(form: NgForm) {
-    if(this.user.id !== undefined){
-      this.userService.updateUser(this.user).subscribe( () => {
-        this.cleanForm(form);
-      });
-    } else{
-      this.userService.saveUser(this.user).subscribe(() => {
-        this.cleanForm(form);
-        console.log("salvo")
-      });
-    }
+    this.userService.saveUser(this.user).subscribe(() => {
+      this.cleanForm(form);
+      console.log("salvo")
+      console.log(this.user);
+    });
   }
 
   cleanForm(form: NgForm) {

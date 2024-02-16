@@ -52,7 +52,7 @@ export class UserService {
   }
 
   updateUser(user: User): Observable<User>{
-    return this.httpClient.put<User>(this.usersUrl + '/' + user.id, JSON.stringify(user), this.httpOptions)
+    return this.httpClient.put<User>(this.usersUrl + '/update/' + user.id, JSON.stringify(user), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)
@@ -60,7 +60,7 @@ export class UserService {
   }
 
   deleteUser(user: User): Observable<User>{
-    return this.httpClient.delete<User>(this.usersUrl + '/' + user.id, this.httpOptions)
+    return this.httpClient.delete<User>(this.usersUrl + '/delete/' + user.id, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

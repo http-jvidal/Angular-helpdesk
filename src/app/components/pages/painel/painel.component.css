@@ -1,0 +1,30 @@
+.container-s {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10rem auto;
+    background-color: white;
+    padding-top: 3rem;
+    border-radius: 1rem;
+    box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
+    -webkit-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
+    -moz-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
+    height: 25rem;
+    max-width: 500px;
+}
+
+
+mat-form-field{
+    max-width: 250px;
+}
+
+mat-label{
+    font-size: 1rem;
+}
+
+  
+
+.custom-snackbar {
+    background-color: black; /* Define a cor de fundo */
+    color: white; /* Define a cor do texto */
+}

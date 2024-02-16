@@ -15,7 +15,7 @@
           <div *ngIf="name.errors?.['required']">Nome é obrigatório</div>
         </div>
 
-        <input type="text" [(ngModel)]="user.departamento.id" #departamento="ngModel" required class="form-control" [ngClass]="{
+        <input type="text" [(ngModel)]="user['departamento']" #departamento="ngModel" required class="form-control" [ngClass]="{
           'is-invalid': form.submitted && departamento.invalid
         }" placeholder="Departamento" name='departament' id="department">
         <div *ngIf="form.submitted && departamento.invalid" class="invalid-feedback">

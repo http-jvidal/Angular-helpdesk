@@ -22,6 +22,9 @@ export class LoginComponent implements OnInit {
   users!: User[];
 
 
+  loginDTO = {} as LoginDTO;
+
+
   constructor(private formBuilder: FormBuilder,
               private userService: UserService,
               private authService: AuthService,
@@ -42,17 +45,18 @@ export class LoginComponent implements OnInit {
 
   logar(form: NgForm){
     console.log(form);
-    if(this.form.get('login').value === null && this.form.get('senha') === null){
-      this.mensagem = "Login e senha não podem ser nulos";
-    } else {
-      this.authService.login(this.user);
+    const login = form.value.login;
+    const password = form.value.senha;
+
+    if(!login || !password){
+      this.mensagem = "Login e Senha não podem ser nulos";
+      return
     }
 
-    if(this.form.get('login').value == this.user.username && this.form.get('senha').value == this.user.password){
-      this.mensagem = "Login efetuado com sucesso";
-    } else {
-      this.mensagem = "Login ou senha incorretos";
-    }
+    this.authService.login(login, password).subscribe( () => {
+      this.cleanForm(this.form);
+      this.mensagem = "Login efetuado com sucesso"
+    })
   }
 
   getUser(){
@@ -61,7 +65,6 @@ export class LoginComponent implements OnInit {
     })
   }
   cleanForm(form: NgForm) {
-    this.getUser();
     form.resetForm();
     this.user = {} as User;
   }

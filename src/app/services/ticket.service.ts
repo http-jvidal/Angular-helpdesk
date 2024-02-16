@@ -1,17 +1,17 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable, catchError, retry, throwError } from 'rxjs';
-import { LoginDTO } from '../DTO/Login.DTO';
+import { Ticket } from '../models/ticket.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class TicketService {
 
-  private authUrl = "http://localhost:8082/auth";
-
-  constructor(private http: HttpClient) { }
-
+  private ticketUrl;
+  constructor( private httpClient: HttpClient) { 
+    this.ticketUrl = "http://localhost:8082/api/ticket"
+  }
 
   httpOptions = {
     _headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -22,19 +22,25 @@ export class AuthService {
       this._headers = value;
     },
   }
-  // Método para fazer login
-  login(login: string, password: string): Observable<any> {
-    const loginData = { login: login, password: password };
-  
-    return this.http.post<LoginDTO>(this.authUrl + '/login', loginData)
+
+
+  createTicket(ticket : Ticket): Observable<Ticket>{
+    return this.httpClient.post<Ticket>(this.ticketUrl + '/' , JSON.stringify(ticket), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
       );
   }
-  
 
+  updateTicket(ticket: Ticket): Observable<Ticket>{
+    return this.httpClient.put<Ticket>(this.ticketUrl + '/' + ticket.id, JSON.stringify(ticket), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      );
+  }
 
+ 
   handleError(error: HttpErrorResponse){
     let errorMessage = '';
     if (error.error instanceof ErrorEvent)
@@ -44,5 +50,4 @@ export class AuthService {
     console.log(errorMessage);
     return throwError(errorMessage);
   }
-
 }

@@ -37,3 +37,9 @@ section.login__container form > h3 {
   margin: 1.4rem 0;
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
