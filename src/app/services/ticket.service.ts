@@ -24,8 +24,8 @@ export class TicketService {
   }
 
 
-  createTicket(ticket : Ticket): Observable<Ticket>{
-    return this.httpClient.post<Ticket>(this.ticketUrl + '/' , JSON.stringify(ticket), this.httpOptions)
+  createTicket(ticket : Ticket): Observable<any>{
+    return this.httpClient.post<any>(this.ticketUrl + '/' , JSON.stringify(ticket), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)

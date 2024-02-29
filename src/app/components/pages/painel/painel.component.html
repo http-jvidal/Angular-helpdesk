@@ -1,25 +1,31 @@
 
-<form #formDirective="ngForm" class="container-s">
+<form #formDirective="ngForm" class="container-s" (ngSubmit)="createTicket()">
     
         <mat-form-field class="mat-label" >
             <mat-label>Nome</mat-label>
-            <input matInput [(ngModel)]="ticket.name" name="nome" >
+            <input matInput [(ngModel)]="ticket.nome" name="nome" >
         </mat-form-field>
-    
-        <mat-form-field class="mat-label">
+        
+        <mat-form-field>x
             <mat-label>Departamento</mat-label>
-            <input matInput [(ngModel)]="ticket.departamento" name="departamento">
+            <mat-select [(ngModel)]="ticket.departamento" name="departamento">
+               <mat-option *ngFor="let option of options" [value]="option.value">{{ option.label }}</mat-option>
+            </mat-select>
         </mat-form-field>
+
+
         <mat-form-field class="mat-label">
             <mat-label>Contato</mat-label>
             <input matInput [(ngModel)]="ticket.contato" name="contato">
         </mat-form-field>
-        <mat-form-field class="mat-label">
+
+        
+        <mat-form-field class="detail">
             <mat-label>Detalhes do chamado</mat-label>
             <textarea matInput [(ngModel)]="ticket.detalhes" name="detalhes"></textarea>
         </mat-form-field>
         
-        <button class="btn btn-success" (click)="createTicket()">Abrir Chamado</button>
+        <button class="btn btn-success" >Abrir Chamado</button>
 </form>
 
 

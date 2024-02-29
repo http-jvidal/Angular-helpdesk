@@ -1,9 +1,10 @@
 export interface Ticket {
     
       id: Number;
-      name: String;
+      nome: String;
+      estado: String;
       detalhes: String;
       contato: String;
-      departamento: String;
+      departamento: any;
 }
   

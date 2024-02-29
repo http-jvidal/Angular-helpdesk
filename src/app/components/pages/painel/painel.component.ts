@@ -11,28 +11,44 @@ import { TicketService } from 'src/app/services/ticket.service';
 
 export class PainelComponent {
 
+
   @ViewChild('formDirective') formDirective!:NgForm
+
+
   ticket = {} as Ticket;
   tickets!: Ticket[];
 
   mensagem!: String;
 
+
+  options = [
+    {label: "TI", value: "TI"},
+    {label: "RH", value: "RH"},
+    {label: "COMPRAS", value: "COMPRAS"},
+    {label: "EXPEDIÇÃO", value: "EXPEDIÇÃO"},
+    {label: "ALMOX", value: "ALMOXARIFADO"},
+  ]
   
   constructor(private ticketService: TicketService,
               private snackBar: MatSnackBar){
     
   }
 
-
-
   createTicket(){
-    this.ticketService.createTicket(this.ticket).subscribe( () => {
-      this.cleanForm();
-      this.snackBar.open('Ticket aberto', 'Fechar', {
+    this.ticketService.createTicket(this.ticket).
+    subscribe( response => {
+      this.snackBar.open("Ticket aberto com sucesso", response, {
         duration: 3000,
       });
-      console.log("Ticket Aberto")
-    });
+    }, error => {
+      this.snackBar.open("Erro ao abrir ticket", error, {
+        duration: 3000,
+      });
+
+      this.cleanForm();
+    }
+    
+    );
     
     
   }
@@ -40,4 +56,6 @@ export class PainelComponent {
   cleanForm() {
     this.formDirective.resetForm();
   }
+
+  
 }

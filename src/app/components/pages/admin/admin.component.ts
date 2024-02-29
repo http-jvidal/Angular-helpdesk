@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Ticket } from 'src/app/models/ticket.model';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
-import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
 })
+
 export class AdminComponent {
 
   estadoChamados = [
@@ -19,6 +19,9 @@ export class AdminComponent {
   
   user = {} as User;
   users: User[] = [];
+
+  ticket = {} as Ticket;
+  tickets: Ticket[] = [];
 
   constructor(private userService: UserService){
 

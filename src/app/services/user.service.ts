@@ -2,7 +2,6 @@ import { Observable, catchError, retry, throwError } from 'rxjs';
 import { User } from '../models/user.model';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginDTO } from '../DTO/Login.DTO';
 
 @Injectable({
   providedIn:'root'
@@ -30,7 +29,7 @@ export class UserService {
   public getUsers(): Observable<User[]>{
     return this.httpClient.get<User[]>(this.usersUrl + '/')
       .pipe(
-        retry(2),
+        retry(1),
         catchError(this.handleError)
       );
   }
@@ -38,15 +37,15 @@ export class UserService {
   getUserById(id: number): Observable<User>{
     return this.httpClient.get<User>(this.usersUrl + '/' + id)
       .pipe(
-        retry(2),
+        retry(1),
         catchError(this.handleError)
       );
   }
 
-  saveUser(user : User): Observable<User>{
+  saveUser(user : User): Observable<any>{
     return this.httpClient.post<User>(this.usersUrl + '/' , JSON.stringify(user), this.httpOptions)
       .pipe(
-        retry(2),
+        retry(1),
         catchError(this.handleError)
       );
   }

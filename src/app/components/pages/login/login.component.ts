@@ -1,19 +1,19 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginDTO } from 'src/app/DTO/Login.DTO';
 import { User } from 'src/app/models/user.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
-
+import {ThemePalette} from '@angular/material/core';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   providers: [UserService]
 })
-export class LoginComponent implements OnInit {
+
+
+export class LoginComponent implements OnInit{
 
   form: any;
   mensagem!: String;
@@ -22,18 +22,17 @@ export class LoginComponent implements OnInit {
   users!: User[];
 
 
-  loginDTO = {} as LoginDTO;
-
 
   constructor(private formBuilder: FormBuilder,
               private userService: UserService,
               private authService: AuthService,
               private router: Router,
               ){
-    this.buildForm();
+    
   }
   ngOnInit(): void {
-    this.getUser()
+    this.buildForm();
+
   }
 
   buildForm(){
