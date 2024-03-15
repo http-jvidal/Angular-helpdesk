@@ -13,8 +13,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10rem auto;
-    background-color: rgba(255, 255, 255, 0.719);
+    margin: 9rem auto;
+    background-color: #ffffff96;
     padding-top: 4rem;
     padding-bottom: 2rem;
     border-radius: 0.8rem;
@@ -26,15 +26,23 @@
 }
 
 
+
 mat-form-field{
-    max-width: 250px;
+    max-width: 210px;
 
 }
 
-mat-label{
-    font-size: 1rem;
-}
 
+.mat-label{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 5.6rem;
+    border-radius: 1rem;
+    padding-bottom:  0;
+    color: white;
+    max-width: 20rem;
+  }
   
 .custom-snackbar {
     background-color: black; /* Define a cor de fundo */

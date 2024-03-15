@@ -1,10 +1,10 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="bradcrumb-item active" aria-currten="page">Gerenciamento de Usuários</li>
+    <li class="breadcrumb-item active" aria-current="page">Gerenciamento de Usuários</li>
   </ol>
 </nav>
 
-<div class="container">
+<div class="container" >
   <div class="card list-user">
     <h5 class="card-header pb-3 mt-2 text-center">Lista de Usuários</h5>
   </div>
@@ -12,24 +12,18 @@
     <table class="table text-center">
       <thead>
         <tr>
-          <th scope="col">Id</th>
           <th scope="col">Nome</th>
           <th scope="col">Login</th>
           <th scope="col">Departamento</th>
-          <th scope="col">Detalhes</th>
           <th scope="col"></th>
         </tr>
       </thead>
 
       <tbody>
         <tr *ngFor="let user of users">
-          <td>{{ user.id }}</td>
-          <td>{{ user.name }}</td>
+          <td>{{ user['name'] }}</td>
           <td>{{ user.username }}</td>
-          <td *ngIf="user['departamento']">{{ user['departamento']['name'] }}</td>
-          <td *ngIf="!user['departamento']">Sem departamento</td>
-          <td *ngIf="user?.ticket?.detalhes"> {{ user['ticket']['detalhes'] }}</td>
-          <td *ngIf="!user['ticket']['detalhes']"> Sem Ticket aberto </td>
+          <td *ngIf="user && user.departamento">{{ user.departamento['name'] }}</td>
 
           <td>
             <button type="button" class="buttonEdit btn btn-warning btn-sm" (click)="editUser(user)">Editar Usuário</button>
@@ -43,44 +37,20 @@
   <div class="card add-user">
     <h5 class="card-header">Adicionar/Atualizar usuários</h5>
     <div class="card-body">
-
-      <form id="add-form" (ngSubmit)="f.form.valid && saveUser(f)" #f="ngForm" novalidate >
-      <div class="form-group">
-        <label for="id">Id</label>
-        <input type="text" [(ngModel)]="user.id" name="id" id="id" #id="ngModel"required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && id.invalid}" placeholder="Digite o Id">
-          <div *ngIf="f.submitted && id.invalid" class="invalid-feedback">
-            <div *ngIf="id.errors?.['required']"></div>
-          </div>
-      </div>
-
-      <div class="form-group">
-        <label for="name">Nome</label>
-        <input type="text" [(ngModel)]="user.name" id="name" name="name" #name="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && name.invalid}" placeholder="Digite o Nome">
-          <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
-            <div *ngIf="name.errors?.['required']" class="color-red">Nome é obrigatório</div>
-          </div>
-      </div>
-
-      <div class="form-group">
-        <label for="login">Login</label>
-        <input type="text" [(ngModel)]="user.username" id="login" name="login" #login="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && login.invalid}" placeholder="Digite o Login">
-      </div>
-
+      <form id="add-form" (ngSubmit)="saveUser(f)" #f="ngForm" novalidate>
       
-      <div class="form-group">
-        <label for="Departamento">Departamento</label>
-        <input type="text" [(ngModel)]="user['departamento']['name']" id="departamento" name="departamento" #login="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && login.invalid}" placeholder="Digite o Departamento">
-      </div>
-      <div class="form-group">
-        <label for="Departamento">Detalhes</label>
-        <input type="text" [(ngModel)]="user['ticket']['detalhes']" id="detalhes" name="detalhes" #login="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && login.invalid}" placeholder="Digite o Departamento">
-      </div>
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" [(ngModel)]="user.name" id="name" name="name" #name="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && name.invalid}" placeholder="Digite o Nome">
+        </div>
 
+        <div class="form-group">
+          <label for="login">Login</label>
+          <input type="text" [(ngModel)]="user.username" id="login" name="login" #login="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && login.invalid}" placeholder="Digite o Login">
+        </div>
 
-      <input class="btn btn-primary mt-4" type="submit" value="Salvar">
-    </form>
+        <input class="btn btn-primary mt-4" type="submit" value="Salvar">
+      </form>
     </div>
-
   </div>
-
 </div>

@@ -10,30 +10,24 @@ export class TicketService {
 
   private ticketUrl;
   constructor( private httpClient: HttpClient) { 
-    this.ticketUrl = "http://localhost:8082/api/ticket"
+    this.ticketUrl = "http://localhost:8082/api/ticket/";
   }
 
   httpOptions = {
-    _headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-    get headers() {
-      return this._headers;
-    },
-    set headers(value) {
-      this._headers = value;
-    },
-  }
-
-
+    headers: new HttpHeaders()
+      .set('Content-Type', 'application/json')
+  };
+ 
   createTicket(ticket : Ticket): Observable<any>{
-    return this.httpClient.post<any>(this.ticketUrl + '/' , JSON.stringify(ticket), this.httpOptions)
+    return this.httpClient.post<Ticket>(this.ticketUrl, JSON.stringify(ticket), this.httpOptions)
       .pipe(
-        retry(2),
+        retry(1),
         catchError(this.handleError)
       );
   }
 
   updateTicket(ticket: Ticket): Observable<Ticket>{
-    return this.httpClient.put<Ticket>(this.ticketUrl + '/' + ticket.id, JSON.stringify(ticket), this.httpOptions)
+    return this.httpClient.put<Ticket>(this.ticketUrl + ticket.id, JSON.stringify(ticket), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

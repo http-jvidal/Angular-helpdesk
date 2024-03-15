@@ -23,7 +23,7 @@ export class AuthService {
 
     return this.http.post<any>(`${this.authUrl}/login`, body.toString(), { headers: headers })
       .pipe(
-        retry(2),
+        retry(1),
         catchError(this.handleError)
       );
   }

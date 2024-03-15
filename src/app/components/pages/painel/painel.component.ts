@@ -34,23 +34,24 @@ export class PainelComponent {
     
   }
 
-  createTicket(){
-    this.ticketService.createTicket(this.ticket).
-      subscribe( response => {
-        if(this.ticket == null){
-          this.snackBar.open("Todos campos são Obrigatórios", "Fechar",{
-            duration: 3000,
-          })
+  createTicket(): void {
+
+    this.ticketService.createTicket(this.ticket).subscribe(
+      () => {
+        if(!this.ticket){
+          this.snackBar.open("Nenhum campo pode ser nulo");
         }
-        this.snackBar.open("Ticket aberto com sucesso", response, {
-          duration: 3000,
-        });
-    
-          this.cleanForm();
-        }
-      );
-    
-    
+        this.snackBar.open("Ticket aberto com sucesso" , "Fechar", {
+          duration: 3000
+        })
+        this.cleanForm();
+      },
+      (error) => {
+        
+        console.error('Erro ao criar ticket:', error);
+        
+      }
+    );
   }
   
   cleanForm() {

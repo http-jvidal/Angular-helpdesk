@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Ticket } from 'src/app/models/ticket.model';
 import { User } from 'src/app/models/user.model';
@@ -10,13 +10,8 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./admin.component.css'],
 })
 
-export class AdminComponent {
+export class AdminComponent implements OnInit{
 
-  estadoChamados = [
-    'Aberto', 'Fechado'
-  ]
-  estadoSelecionado!: String;
-  
   user = {} as User;
   users: User[] = [];
 
@@ -27,7 +22,7 @@ export class AdminComponent {
 
   }
 
-  ngOnInit(){
+  ngOnInit(): void{
     this.getUser();
   }
 
@@ -42,6 +37,7 @@ export class AdminComponent {
         this.cleanForm(form);
         console.log("salvo")
       });
+      
     } else{
       this.userService.saveUser(this.user).subscribe(() => {
         this.cleanForm(form);
