@@ -2,18 +2,18 @@
     <div>
         <form #formDirective="ngForm"   >
             
-            <img class="logo" src="assets/logo.png" alt="">
-            <mat-form-field class="mat-label" color="accent" style="border-color: white;">
+            <img class="logo" src="assets/logo.png" alt="Logo da Belacci" >
+            <mat-form-field class="mat-label" color="warn" style="border-color: black;">
                 <mat-label >Login</mat-label>
-                <input matInput type="text" name="login"  style="color: white;">
+                <input matInput type="text" name="login" [(ngModel)]="login"  style="color: black;">
             </mat-form-field>
 
-            <mat-form-field class="mat-label" color="accent">
-                <mat-label>Senha</mat-label>
-                <input matInput type="password" name="password" style="color: white;" >
+            <mat-form-field class="mat-label" color="warn">
+                <mat-label >Senha</mat-label>
+                <input matInput type="password" name="password" [(ngModel)]="senha" style="color: black;" >
             </mat-form-field>
         
-            <button >Fazer login</button>
+            <button (click)="logar()">Fazer login</button>
         </form>
     </div>
 </body>     

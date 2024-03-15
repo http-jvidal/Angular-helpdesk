@@ -36,19 +36,19 @@ export class PainelComponent {
 
   createTicket(){
     this.ticketService.createTicket(this.ticket).
-    subscribe( response => {
-      this.snackBar.open("Ticket aberto com sucesso", response, {
-        duration: 3000,
-      });
-    }, error => {
-      this.snackBar.open("Erro ao abrir ticket", error, {
-        duration: 3000,
-      });
-
-      this.cleanForm();
-    }
+      subscribe( response => {
+        if(this.ticket == null){
+          this.snackBar.open("Todos campos são Obrigatórios", "Fechar",{
+            duration: 3000,
+          })
+        }
+        this.snackBar.open("Ticket aberto com sucesso", response, {
+          duration: 3000,
+        });
     
-    );
+          this.cleanForm();
+        }
+      );
     
     
   }

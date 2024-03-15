@@ -12,24 +12,16 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+  login(username: string, password: string): Observable<any> {
+    const body = new URLSearchParams();
+    body.set('username', username);
+    body.set('password', password);
 
-  httpOptions = {
-    _headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-    get headers() {
-      return this._headers;
-    },
-    set headers(value) {
-      this._headers = value;
-    },
-  }
-  // Método para fazer login
-  login(login: string, password: string): Observable<any> {
-    const loginData = { 
-      login: login, 
-      password: password,
-    };
-  
-    return this.http.post<User>(this.authUrl + '/login', loginData)
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+
+    return this.http.post<any>(`${this.authUrl}/login`, body.toString(), { headers: headers })
       .pipe(
         retry(2),
         catchError(this.handleError)

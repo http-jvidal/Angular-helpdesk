@@ -1,9 +1,21 @@
 *{
-  color: white;
+  color: black;
+}
+
+/* Estilos para centralizar o mat-spinner */
+.spinner-container {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+/* Estilos para mudar a cor do mat-spinner */
+.mat-spinner-color {
+  color: red; /* Altere para a cor desejada */
 }
 
 body{
-  background-image: linear-gradient(to right ,rgba(0, 0, 0, 0.26) , rgba(0, 0, 0, 0.479)), url("/assets/04.jpg");
+  background-image: linear-gradient(to right ,rgba(0, 0, 0, 0.555) , rgba(0, 0, 0, 0.705)), url("/assets/04.jpg");
   height: 100vh;
   width: 100vw;
   z-index: 98;
@@ -25,20 +37,20 @@ body{
 
 div{
     position: relative;
-    top: 11rem;
+    top: 14rem;
     display: block;
     margin: auto;
     width: 30rem;
     height: 50vh;
-    border-right: 1px solid gray;
     z-index: 98;
-    background-color: rgba(238, 236, 236, 0.438);
+    background-color: #ffffff96;
     border-radius: 1rem;
 }
 
 form{
+  display: block;
   padding-top: 6rem;
-  padding-bottom: 10rem;
+  padding-bottom: 5rem;
   color: white;
 }
 
@@ -61,9 +73,6 @@ button{
   opacity: 1;
   padding: .5rem;
   border-radius: 1rem;
-  color: white;
+  color: black;
 }
 
-input{
-  color: white;
-}

@@ -13,3 +13,7 @@ table > thead > tr{
   border-radius: 1rem;
   padding: 10px;
 }
+
+td{
+  border-right:  1px solid black;
+}

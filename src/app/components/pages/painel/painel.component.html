@@ -1,3 +1,5 @@
+<div class="container__bg">
+    
 
 <form #formDirective="ngForm" class="container-s" (ngSubmit)="createTicket()">
     
@@ -6,7 +8,7 @@
             <input matInput [(ngModel)]="ticket.nome" name="nome" >
         </mat-form-field>
         
-        <mat-form-field>x
+        <mat-form-field>
             <mat-label>Departamento</mat-label>
             <mat-select [(ngModel)]="ticket.departamento" name="departamento">
                <mat-option *ngFor="let option of options" [value]="option.value">{{ option.label }}</mat-option>
@@ -28,5 +30,6 @@
         <button class="btn btn-success" >Abrir Chamado</button>
 </form>
 
+</div>
 
     
