@@ -2,27 +2,27 @@
     overflow: hidden;
 }
 
+
 .container__bg{
     background-image: linear-gradient(to right ,rgba(0, 0, 0, 0.555) , rgba(0, 0, 0, 0.705)), url("/assets/04.jpg");
     height: 100vh;
     width: 100vw;
-    z-index: 98;
 }
 
 .container-s {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 9rem auto;
+    position: relative;
+    top: 14rem;
+    display: block;
+    margin: auto;
+    width: 30rem;
+    height: 50vh;
+    z-index: 98;
     background-color: #ffffff96;
-    padding-top: 4rem;
-    padding-bottom: 2rem;
-    border-radius: 0.8rem;
+    border-radius: 1rem;
     box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
     -webkit-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
     -moz-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-    height: 40rem;
-    max-width: 500px;
+    
 }
 
 
@@ -33,18 +33,28 @@ mat-form-field{
 }
 
 
+
 .mat-label{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    padding-top: .5rem ;
     margin-left: 5.6rem;
     border-radius: 1rem;
     padding-bottom:  0;
     color: white;
     max-width: 20rem;
-  }
+}
   
+form
 .custom-snackbar {
     background-color: black; /* Define a cor de fundo */
     color: white; /* Define a cor do texto */
+}
+
+button{
+    display: block;
+    margin: auto;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
 }
