@@ -10,7 +10,7 @@ export class TicketService {
 
   private ticketUrl;
   constructor( private httpClient: HttpClient) { 
-    this.ticketUrl = "http://localhost:8082/api/ticket/";
+    this.ticketUrl = "http://10.10.10.181:8082/api/ticket/";
   }
 
   httpOptions = {
