@@ -14,9 +14,15 @@ export class TicketService {
   }
 
   httpOptions = {
-    headers: new HttpHeaders()
-      .set('Content-Type', 'application/json')
-  };
+    _headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    get headers() {
+      return this._headers;
+    },
+    set headers(value) {
+      this._headers = value;
+    },
+  }
+
  
   createTicket(ticket : Ticket): Observable<any>{
     return this.httpClient.post<Ticket>(this.ticketUrl, JSON.stringify(ticket), this.httpOptions)

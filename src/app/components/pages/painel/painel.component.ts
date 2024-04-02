@@ -35,20 +35,22 @@ export class PainelComponent {
   }
 
   createTicket(): void {
-
+    
     this.ticketService.createTicket(this.ticket).subscribe(
       () => {
         if(!this.ticket){
-          this.snackBar.open("Nenhum campo pode ser nulo");
-        }
+          this.snackBar.open("Nenhum campo pode ser nulo", "Fechar", {
+            duration: 3000
+          });
+        } 
         this.snackBar.open("Ticket aberto com sucesso" , "Fechar", {
           duration: 3000
         })
         this.cleanForm();
       },
+
       (error) => {
-        
-        console.error('Erro ao criar ticket:', error);
+          console.log(error);
         
       }
     );

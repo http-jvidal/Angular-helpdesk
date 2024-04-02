@@ -8,7 +8,11 @@ import { User } from '../models/user.model';
 })
 export class AuthService {
 
+  private isAuthenticated: boolean = false;
   private authUrl = "http://10.10.10.181:8082/auth";
+
+  user = {} as User;
+  users: User[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -20,14 +24,20 @@ export class AuthService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
     });
-
+    this.isAuthenticated = true;
+    this.user.roles;
+    console.log(this.user.roles);
     return this.http.post<any>(`${this.authUrl}/login`, body.toString(), { headers: headers })
       .pipe(
         retry(1),
         catchError(this.handleError)
       );
   }
-  
+
+  isAuthenticatedUser(): boolean{
+    return this.isAuthenticated;
+  }
+
   handleError(error: HttpErrorResponse){
     let errorMessage = '';
     if (error.error instanceof ErrorEvent)

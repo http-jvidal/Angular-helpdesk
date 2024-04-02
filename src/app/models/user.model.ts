@@ -7,5 +7,6 @@ export interface User {
     id: Number;
     name: String;
   }
+  roles: String;
  
 }

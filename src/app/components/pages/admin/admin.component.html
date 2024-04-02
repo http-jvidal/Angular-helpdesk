@@ -15,6 +15,7 @@
           <th scope="col">Nome</th>
           <th scope="col">Login</th>
           <th scope="col">Departamento</th>
+          <th scope="col">Roles</th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -24,6 +25,9 @@
           <td>{{ user['name'] }}</td>
           <td>{{ user.username }}</td>
           <td *ngIf="user && user.departamento">{{ user.departamento['name'] }}</td>
+          <td>{{user.roles}}</td>
+
+  
 
           <td>
             <button type="button" class="buttonEdit btn btn-warning btn-sm" (click)="editUser(user)">Editar Usuário</button>
@@ -47,6 +51,11 @@
         <div class="form-group">
           <label for="login">Login</label>
           <input type="text" [(ngModel)]="user.username" id="login" name="login" #login="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && login.invalid}" placeholder="Digite o Login">
+        </div>
+
+        <div class="form-group">
+          <label for="roles">roles</label>
+            <input type="text" placeholder="Digite a Role"  [(ngModel)]="user.roles" id="roles" name="roles" #roles="ngModel" required class="form-control">
         </div>
 
         <input class="btn btn-primary mt-4" type="submit" value="Salvar">

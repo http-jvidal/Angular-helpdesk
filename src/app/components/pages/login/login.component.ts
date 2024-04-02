@@ -15,7 +15,6 @@ import { UserService } from 'src/app/services/user.service';
 
 
 export class LoginComponent implements OnInit{
-
   form: any;
   mensagem!: String;
 
@@ -36,10 +35,7 @@ export class LoginComponent implements OnInit{
     
   }
   ngOnInit(): void {
-    setTimeout( () => {
-      this.carregando = false;
-    })
-
+    
   }
 
   buildForm(){
@@ -58,15 +54,15 @@ export class LoginComponent implements OnInit{
       return
     }
 
-    this.authService.login(this.login, this.senha).subscribe( () => {
-      this.cleanForm(this.form);
+    this.authService.login(this.login, this.senha)?.subscribe(  (res) => {
+   
       this.router.navigate(['/painel']);
-
       this.snackBar.open("Login efetuado com sucesso", "Fechar", {
         duration: 3000
       });
     }, (error) => {
       console.error("Erro no login", error)
+      this.cleanForm(this.form);
     })
   }
 

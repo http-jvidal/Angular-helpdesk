@@ -16,12 +16,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminComponent,
     PainelComponent,
+    
   ],
   imports: [
     BrowserModule,
