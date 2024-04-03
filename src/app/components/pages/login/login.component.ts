@@ -38,13 +38,6 @@ export class LoginComponent implements OnInit{
     
   }
 
-  buildForm(){
-    this.form = this.formBuilder.group({
-      login: [''],
-      senha: [''],
-    });
-  }
-
   logar(): void{
     
     if(!this.login || !this.senha){
@@ -54,12 +47,12 @@ export class LoginComponent implements OnInit{
       return
     }
 
-    this.authService.login(this.login, this.senha)?.subscribe(  (res) => {
-   
+    this.authService.login(this.login, this.senha)?.subscribe( () => {
       this.router.navigate(['/painel']);
       this.snackBar.open("Login efetuado com sucesso", "Fechar", {
         duration: 3000
       });
+
     }, (error) => {
       console.error("Erro no login", error)
       this.cleanForm(this.form);

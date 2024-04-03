@@ -34,6 +34,20 @@ export class UserService {
       );
   }
 
+  getByRoles(username: string): any {
+    return this.httpClient.get(this.usersUrl + "/roles/" + username)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      );
+  }
+  getUserByUsername(username: string): Observable<User>{
+    return this.httpClient.get<User>(this.usersUrl + '/login/' + username)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      );
+  }
   getUserById(id: number): Observable<User>{
     return this.httpClient.get<User>(this.usersUrl + '/' + id)
       .pipe(
