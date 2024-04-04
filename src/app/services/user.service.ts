@@ -41,13 +41,15 @@ export class UserService {
         catchError(this.handleError)
       );
   }
+
   getUserByUsername(username: string): Observable<User>{
-    return this.httpClient.get<User>(this.usersUrl + '/login/' + username)
+    return this.httpClient.get<User>(this.usersUrl + '/find/username/' + username)
       .pipe(
         retry(1),
         catchError(this.handleError)
       );
   }
+  
   getUserById(id: number): Observable<User>{
     return this.httpClient.get<User>(this.usersUrl + '/' + id)
       .pipe(

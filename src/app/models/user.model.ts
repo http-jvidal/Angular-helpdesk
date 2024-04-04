@@ -1,12 +1,12 @@
 export interface User {
   id: Number;
-  name: String;
-  username: String;
-  password: String;
+  name: string;
+  username: string;
+  password: string;
   departamento: {
     id: Number;
-    name: String;
+    name: string;
   }
-  roles: String;
+  roles: string;
  
 }

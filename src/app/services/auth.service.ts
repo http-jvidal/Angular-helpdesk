@@ -11,13 +11,14 @@ export class AuthService {
 
   private isAuthenticated: boolean = false;
   private isLogged: boolean = true
-  private userData: any = true;
+  private userData: any ;
   private authUrl = "http://10.10.10.181:8082/auth";
 
   user = {} as User;
   users: User[] = [];
 
  
+
 
   constructor(private http: HttpClient,
               private userService: UserService,
@@ -29,16 +30,15 @@ export class AuthService {
     body.set('password', password);
 
     this.isLogged = true;
-    
-    
-    localStorage.setItem('userData', JSON.stringify(this.userService.getUserByUsername(username)));
-    console.log(localStorage);
-    console.log(this.userService.getUserByUsername(username));
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
     });
+    
+    localStorage.setItem('userData', JSON.stringify(this.userService.getUserByUsername(username)));
     this.isAuthenticated = true;
-    return this.http.post<any>(`${this.authUrl}/login`, body.toString(), { headers: headers })
+
+  
+    return this.http.post<any>(`${this.authUrl}/login`, body.toString(),  { headers: headers })
       .pipe(
         retry(1),
         catchError(this.handleError)
@@ -51,11 +51,7 @@ export class AuthService {
 
   
   isAdmin(user: string){
-    if(this.userService.getByRoles(user) == "admin"){
-      return true;
-    } else {
-      return false
-    }
+    return this.isAuthenticated
   }
   
   

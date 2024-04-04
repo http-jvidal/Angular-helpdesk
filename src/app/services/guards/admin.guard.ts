@@ -14,22 +14,9 @@ export class AdminGuard implements CanActivate {
     private authService: AuthService,
     private userService: UserService,
   ) {}
-
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ):
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
-    // Se o usuário tiver permissão de admin,
-    // o enviamos para a tela de admin
-
-    if (this.authService.isAdmin()) {
-      this.router.navigate(['/']);
-      return false;
-    }
-      return true;
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+    throw new Error("Method not implemented.");
   }
+
+
 }

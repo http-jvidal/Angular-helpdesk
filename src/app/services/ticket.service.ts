@@ -1,12 +1,13 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, retry, throwError } from 'rxjs';
+import { EMPTY, Observable, catchError, finalize, retry, throwError } from 'rxjs';
 import { Ticket } from '../models/ticket.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TicketService {
+
 
   private ticketUrl;
   constructor( private httpClient: HttpClient) { 

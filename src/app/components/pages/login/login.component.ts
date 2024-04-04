@@ -34,12 +34,12 @@ export class LoginComponent implements OnInit{
               ){
     
   }
+  
   ngOnInit(): void {
     
   }
 
   logar(): void{
-    
     if(!this.login || !this.senha){
       this.snackBar.open("Login e Senha não podem ser nulos", "Fechar", {
         duration: 3000
@@ -48,6 +48,8 @@ export class LoginComponent implements OnInit{
     }
 
     this.authService.login(this.login, this.senha)?.subscribe( () => {
+      const encodedUsername = encodeURIComponent(this.login);
+      localStorage.setItem('username', this.login);
       this.router.navigate(['/painel']);
       this.snackBar.open("Login efetuado com sucesso", "Fechar", {
         duration: 3000
