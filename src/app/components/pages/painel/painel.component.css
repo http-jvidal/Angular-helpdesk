@@ -6,20 +6,50 @@
     width: 100vw;
 }
 
+
+.navbar__container{
+  background-color: #ffffff96;
+  display: flex;
+  width: 100%;
+
+}
+.navbar__list{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 40rem;
+}
+
+div>p{
+  padding-left: 1rem;
+
+}
+ul>li{
+  border-radius: 1rem;
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+img{
+  width: 100px;
+  height: 90px;
+}
+ul>li:hover{
+  cursor: pointer
+
+}
+
+
 .container-s {
     position: relative;
-    top: 14rem;
-    display: block;
     margin: auto;
-    width: 30rem;
-    height: 50vh;
-    z-index: 98;
     background-color: #ffffff96;
     border-radius: 1rem;
     box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
     -webkit-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
     -moz-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-    
+
 }
 
 
@@ -41,7 +71,7 @@ mat-form-field{
     color: white;
     max-width: 20rem;
 }
-  
+
 form
 .custom-snackbar {
     background-color: black; /* Define a cor de fundo */

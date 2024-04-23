@@ -12,12 +12,12 @@ export class AuthService {
   private isAuthenticated: boolean = false;
   private isLogged: boolean = true
   private userData: any ;
-  private authUrl = "http://10.10.10.181:8082/auth";
+  private authUrl = "http://localhost:8082/auth";
 
   user = {} as User;
   users: User[] = [];
 
- 
+
 
 
   constructor(private http: HttpClient,
@@ -33,11 +33,11 @@ export class AuthService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
     });
-    
+
     localStorage.setItem('userData', JSON.stringify(this.userService.getUserByUsername(username)));
     this.isAuthenticated = true;
 
-  
+
     return this.http.post<any>(`${this.authUrl}/login`, body.toString(),  { headers: headers })
       .pipe(
         retry(1),
@@ -49,13 +49,13 @@ export class AuthService {
     return this.isAuthenticated;
   }
 
-  
+
   isAdmin(user: string){
     return this.isAuthenticated
   }
-  
-  
-  
+
+
+
 
   handleError(error: HttpErrorResponse){
     let errorMessage = '';

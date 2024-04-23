@@ -10,8 +10,8 @@ export class TicketService {
 
 
   private ticketUrl;
-  constructor( private httpClient: HttpClient) { 
-    this.ticketUrl = "http://10.10.10.181:8082/api/ticket/";
+  constructor( private httpClient: HttpClient) {
+    this.ticketUrl = "http://localhost:8082/api/ticket/";
   }
 
   httpOptions = {
@@ -24,7 +24,7 @@ export class TicketService {
     },
   }
 
- 
+
   createTicket(ticket : Ticket): Observable<any>{
     return this.httpClient.post<Ticket>(this.ticketUrl, JSON.stringify(ticket), this.httpOptions)
       .pipe(
@@ -41,7 +41,7 @@ export class TicketService {
       );
   }
 
- 
+
   handleError(error: HttpErrorResponse){
     let errorMessage = '';
     if (error.error instanceof ErrorEvent)

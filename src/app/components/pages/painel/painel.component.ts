@@ -6,6 +6,8 @@ import { Ticket } from 'src/app/models/ticket.model';
 import { User } from 'src/app/models/user.model';
 import { TicketService } from 'src/app/services/ticket.service';
 import { UserService } from 'src/app/services/user.service';
+
+
 @Component({
   selector: 'app-painel',
   templateUrl: './painel.component.html',
@@ -27,7 +29,7 @@ export class PainelComponent implements OnInit {
               private snackBar: MatSnackBar,
               private route: ActivatedRoute,
               private userService: UserService){
-    
+
   }
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -52,7 +54,7 @@ export class PainelComponent implements OnInit {
     } else {
       console.log('Nome de usuário não encontrado no localStorage.');
     }
-        
+
       })
     }
 
@@ -62,7 +64,7 @@ export class PainelComponent implements OnInit {
         duration: 3000
       });
       return;
-    } 
+    }
 
     this.ticket.departamento = this.departamento;
     this.ticket.nome = this.nome;
@@ -82,10 +84,10 @@ export class PainelComponent implements OnInit {
 
 
   }
-  
+
   cleanForm() {
     this.formDirective.resetForm();
   }
 
-  
+
 }
