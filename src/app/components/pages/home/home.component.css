@@ -1,12 +1,29 @@
-
-div>p{
-  padding-left: 1rem;
+body{
+  background-image: linear-gradient(to right ,rgba(0, 0, 0, 0.555) , rgba(0, 0, 0, 0.705)), url("/assets/04.jpg");
 
 }
-ul{
-  padding-top: 1.2rem;
-  padding-bottom: 1rem;
+
+div.container{
+  color: white;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  height: 80px;
+  border-bottom: 1px solid gray;
+}
+
+nav.navbar__container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.navbar__list{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  width: 90%;
+  gap: 20rem;
 
 }
 
