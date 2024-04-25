@@ -1,17 +1,21 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { Ticket } from 'src/app/models/ticket.model';
+import { User } from 'src/app/models/user.model';
 import { TicketService } from 'src/app/services/ticket.service';
 import { UserService } from 'src/app/services/user.service';
 
+
 @Component({
-  selector: 'app-painel',
-  templateUrl: './painel.component.html',
-  styleUrls: ['./painel.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
 })
-export class PainelComponent {
+
+export class HomeComponent implements OnInit {
+
 
   @ViewChild('formDirective') formDirective!:NgForm
 
@@ -85,5 +89,6 @@ export class PainelComponent {
   cleanForm() {
     this.formDirective.resetForm();
   }
+
 
 }

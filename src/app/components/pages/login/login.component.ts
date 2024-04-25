@@ -32,11 +32,11 @@ export class LoginComponent implements OnInit{
               private router: Router,
               private snackBar: MatSnackBar
               ){
-    
+
   }
-  
+
   ngOnInit(): void {
-    
+
   }
 
   logar(): void{
@@ -48,9 +48,8 @@ export class LoginComponent implements OnInit{
     }
 
     this.authService.login(this.login, this.senha)?.subscribe( () => {
-      const encodedUsername = encodeURIComponent(this.login);
       localStorage.setItem('username', this.login);
-      this.router.navigate(['/painel']);
+      this.router.navigate(['/ticket']);
       this.snackBar.open("Login efetuado com sucesso", "Fechar", {
         duration: 3000
       });
@@ -72,5 +71,5 @@ export class LoginComponent implements OnInit{
       form.resetForm();
     }
   }
-  
+
 }

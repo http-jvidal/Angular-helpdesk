@@ -1,87 +1,59 @@
+body{
+  height: 100vh;
+  width: 100vw;
+  z-index: 98;
+  background-image: linear-gradient(to right ,rgba(0, 0, 0, 0.555) , rgba(0, 0, 0, 0.705)), url("/assets/04.jpg");
+
+}
 
 
 .container__bg{
-    background-image: linear-gradient(to right ,rgba(0, 0, 0, 0.555) , rgba(0, 0, 0, 0.705)), url("/assets/04.jpg");
-    height: 100vh;
-    width: 100vw;
-}
 
-
-.navbar__container{
+  position: relative;
+  top: 14rem;
+  display: block;
+  margin: auto;
+  width: 30rem;
+  height: 50vh;
+  z-index: 98;
   background-color: #ffffff96;
-  display: flex;
-  width: 100%;
-
-}
-.navbar__list{
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  gap: 40rem;
-}
-
-div>p{
-  padding-left: 1rem;
-
-}
-ul>li{
   border-radius: 1rem;
-  border: 1px solid black;
-  padding: 1rem;
-  margin: 1rem;
-}
-
-img{
-  width: 100px;
-  height: 90px;
-}
-ul>li:hover{
-  cursor: pointer
+  box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
+  -webkit-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
+  -moz-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
 
 }
 
 
-.container-s {
-    position: relative;
-    margin: auto;
-    background-color: #ffffff96;
-    border-radius: 1rem;
-    box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-    -webkit-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-    -moz-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-
-}
 
 
 
 mat-form-field{
-    max-width: 210px;
+  max-width: 210px;
 
 }
 
-
-
 .mat-label{
-    display: flex;
-    flex-direction: column;
-    padding-top: .5rem ;
-    margin-left: 5.6rem;
-    border-radius: 1rem;
-    padding-bottom:  0;
-    color: white;
-    max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: .5rem ;
+  margin-left: 5.6rem;
+  border-radius: 1rem;
+  padding-bottom:  0;
+  color: white;
+  max-width: 20rem;
 }
 
 form
 .custom-snackbar {
-    background-color: black; /* Define a cor de fundo */
-    color: white; /* Define a cor do texto */
+  background-color: black; /* Define a cor de fundo */
+  color: white; /* Define a cor do texto */
 }
 
 button{
-    display: block;
-    margin: auto;
-    background-color: transparent;
-    color: black;
-    border: 1px solid black;
+  display: block;
+  margin: auto;
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
 }
