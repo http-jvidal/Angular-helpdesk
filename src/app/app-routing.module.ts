@@ -7,7 +7,7 @@ import { AuthGuard } from './services/guards/auth.guard'
 import { PainelComponent } from './components/pages/painel/painel.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'ticket', component: PainelComponent, canActivate: [AuthGuard]},
   {path: 'admin', component: AdminComponent},
