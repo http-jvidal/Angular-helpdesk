@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
 import { Ticket } from 'src/app/models/ticket.model';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
@@ -18,15 +20,16 @@ export class AdminComponent implements OnInit{
   ticket = {} as Ticket;
   tickets: Ticket[] = [];
 
-  constructor(private userService: UserService){
+  roles!: string;
+  constructor(private userService: UserService,
+              private route: ActivatedRoute,
+              private snackBar: MatSnackBar
+  ){
 
   }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.getUser();
-  }
-
-  updateTicket(){
 
   }
 
@@ -35,28 +38,46 @@ export class AdminComponent implements OnInit{
     if(this.user.id !== undefined){
       this.userService.updateUser(this.user).subscribe( () => {
         this.cleanForm(form);
-        console.log("salvo")
+        this.snackBar.open("Usuário Atualizado", "Fechar", {
+          duration: 3000
+        });
       });
-      
+
     } else{
       this.userService.saveUser(this.user).subscribe(() => {
         this.cleanForm(form);
-        console.log("salvo")
+        this.snackBar.open("Usuário salvo", "Fechar", {
+          duration: 3000
+        });
       });
     }
   }
 
-  
+
   getUser(){
-    this.userService.getUsers().subscribe((users: User[]) => {
-      this.users = users;
-    })
+    try {
+      this.userService.getUsers().subscribe((users: User[]) => {
+        this.users = users;
+      })
+    } catch(e){
+      this.snackBar.open("Não foi possivel retornar usuários: " + e)
+    }
   }
 
   deleteUser(user: User) {
-    this.userService.deleteUser(user).subscribe(() => {
-      this.getUser();
-    })
+    try{
+      this.userService.deleteUser(user).subscribe(() => {
+        this.getUser();
+        this.snackBar.open("Usuário Deletado", "Fechar", {
+          duration: 3000
+        });
+      })
+    } catch(e){
+      this.snackBar.open("Erro ao Deletar usuário: " + e, "Fechar", {
+        duration: 3000
+      })
+    }
+
   }
 
   editUser(user: User) {

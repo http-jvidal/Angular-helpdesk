@@ -10,6 +10,7 @@ import { UserService } from './user.service';
 export class AuthService {
 
   private isAuthenticated: boolean = false;
+  private isAdm: boolean = false;
   private isLogged: boolean = true
   private userData: any ;
   private authUrl = "http://localhost:8082/auth";
@@ -30,6 +31,8 @@ export class AuthService {
     body.set('password', password);
 
     this.isLogged = true;
+    this.isAdm = true
+
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
     });
@@ -50,12 +53,9 @@ export class AuthService {
   }
 
 
-  isAdmin(user: string){
-    return this.isAuthenticated
+  isAdmin(){
+    return this.isAdm;
   }
-
-
-
 
   handleError(error: HttpErrorResponse){
     let errorMessage = '';

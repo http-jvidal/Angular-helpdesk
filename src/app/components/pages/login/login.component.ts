@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit{
   }
 
   logar(): void{
-    if(!this.login || !this.senha){
+    if(!this.login  || !this.senha ){
       this.snackBar.open("Login e Senha não podem ser nulos", "Fechar", {
         duration: 3000
       });

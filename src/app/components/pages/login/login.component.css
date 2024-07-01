@@ -1,6 +1,4 @@
-*{
-  color: black;
-}
+
 
 /* Estilos para centralizar o mat-spinner */
 .spinner-container {
@@ -14,13 +12,6 @@
   color: red; /* Altere para a cor desejada */
 }
 
-body{
-  background-image: linear-gradient(to right ,rgba(0, 0, 0, 0.555) , rgba(0, 0, 0, 0.705)), url("/assets/04.jpg");
-  height: 100vh;
-  width: 100vw;
-  z-index: 98;
-  
-}
 
 .logo{
   position: relative;
@@ -31,7 +22,7 @@ body{
   width: 130px;
   height: 80px;
   opacity: 1;
-  
+
 }
 
 div{
@@ -47,7 +38,7 @@ div{
     box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
     -webkit-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
     -moz-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-    
+
 }
 
 form{

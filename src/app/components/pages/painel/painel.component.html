@@ -1,4 +1,13 @@
 <body>
+  <div class="container_nav">
+    <nav class="container_navbar">
+      <ul>
+        <li>Dashboard</li>
+        <li>Tickets</li>
+        <li>Logout</li>
+      </ul>
+    </nav>
+  </div>
   <div class="container__bg">
 
 
@@ -17,7 +26,7 @@
 
           <mat-form-field class="mat-label" color="warn" >
               <mat-label>Contato</mat-label>
-              <input matInput [(ngModel)]="ticket.contato" name="contato" [ngModelOptions]="{standalone: true}">
+              <input matInput [(ngModel)]="ticket.contato" type="text" value="{{contato}}" readonly="" [ngModelOptions]="{standalone: true}">
           </mat-form-field>
 
 
@@ -27,6 +36,7 @@
           </mat-form-field>
 
           <button class="btn btn-success" style="color: black;" >Abrir Chamado</button>
+
   </form>
 
   </div>

@@ -1,16 +1,8 @@
-body{
-  height: 100vh;
-  width: 100vw;
-  z-index: 98;
-  background-image: linear-gradient(to right ,rgba(0, 0, 0, 0.555) , rgba(0, 0, 0, 0.705)), url("/assets/04.jpg");
-
-}
-
 
 .container__bg{
 
   position: relative;
-  top: 14rem;
+  top: 8rem;
   display: block;
   margin: auto;
   width: 30rem;
@@ -24,10 +16,16 @@ body{
 
 }
 
+.container_nav{
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
-
-
-
+.container_navbar > ul > li > button{
+  color: white;
+}
 mat-form-field{
   max-width: 210px;
 
@@ -36,7 +34,6 @@ mat-form-field{
 .mat-label{
   display: flex;
   flex-direction: column;
-  padding-top: .5rem ;
   margin-left: 5.6rem;
   border-radius: 1rem;
   padding-bottom:  0;
