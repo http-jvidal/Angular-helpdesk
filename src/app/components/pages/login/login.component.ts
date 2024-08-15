@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit{
   }
 
   logar(): void{
-    if(!this.login || !this.senha){
+    if(!this.login  || !this.senha ){
       this.snackBar.open("Login e Senha não podem ser nulos", "Fechar", {
         duration: 3000
       });
@@ -48,7 +48,6 @@ export class LoginComponent implements OnInit{
     }
 
     this.authService.login(this.login, this.senha)?.subscribe( () => {
-      localStorage.setItem('username', this.login);
       this.router.navigate(['/ticket']);
       this.snackBar.open("Login efetuado com sucesso", "Fechar", {
         duration: 3000
@@ -56,6 +55,7 @@ export class LoginComponent implements OnInit{
 
     }, (error) => {
       console.error("Erro no login", error)
+      this.snackBar.open(error)
       this.cleanForm(this.form);
     })
   }

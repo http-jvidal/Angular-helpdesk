@@ -1,70 +1,56 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Observable, catchError, retry, throwError } from 'rxjs';
-import { User } from '../models/user.model';
-import { UserService } from './user.service';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable, catchError, tap, throwError } from 'rxjs';
+import { ErrorHandlerService } from './errorhandler.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private isAuthenticated: boolean = false;
-  private isLogged: boolean = true
-  private userData: any ;
   private authUrl = "http://localhost:8082/auth";
+  private readonly TOKEN_KEY = "authToken";
 
-  user = {} as User;
-  users: User[] = [];
-
-
-
+  private loggedIn = new BehaviorSubject<boolean>(this.hasToken());
 
   constructor(private http: HttpClient,
-              private userService: UserService,
-              private httpClient: HttpClient) { }
+              private handleError: ErrorHandlerService) { }
 
-  login(username: string, password: string): Observable<any> {
-    const body = new URLSearchParams();
-    body.set('username', username);
-    body.set('password', password);
+  public saveToken(token: string): void {
+    localStorage.setItem(this.TOKEN_KEY, token);
+    this.loggedIn.next(true);
+  }
 
-    this.isLogged = true;
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded'
-    });
+  public removeToken(): void {
+    localStorage.removeItem(this.TOKEN_KEY);
+    this.loggedIn.next(false);
+  }
 
-    localStorage.setItem('userData', JSON.stringify(this.userService.getUserByUsername(username)));
-    this.isAuthenticated = true;
+  public getToken(): string | null {
+    return localStorage.getItem(this.TOKEN_KEY);
+  }
 
+  public hasToken(): boolean {
+    return !!this.getToken();
+  }
 
-    return this.http.post<any>(`${this.authUrl}/login`, body.toString(),  { headers: headers })
+  public isLoggedIn(): Observable<boolean> {
+    return this.loggedIn.asObservable(); // Retorna o Observable do BehaviorSubject
+  }
+
+  public login(username: string, password: string): Observable<any> {
+    const body = { username, password };
+    return this.http.post<{ token: string }>(`${this.authUrl}/login`, body)
       .pipe(
-        retry(1),
-        catchError(this.handleError)
+        tap(response => {
+          this.saveToken(response.token);
+          localStorage.setItem('username', username);
+        }),
+        catchError(this.handleError.handleError)
       );
   }
 
-  isAuthenticatedUser(): boolean{
-    return this.isAuthenticated;
+  public logout(): void {
+    this.removeToken();
   }
-
-
-  isAdmin(user: string){
-    return this.isAuthenticated
-  }
-
-
-
-
-  handleError(error: HttpErrorResponse){
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent)
-      errorMessage = error.error.message;
-    else
-      errorMessage = `Código de erro: ${error.status}, ` + `mensagem: ${error.message}`;
-    console.log(errorMessage);
-    return throwError(errorMessage);
-  }
-
 }

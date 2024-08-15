@@ -1,11 +1,3 @@
-body{
-  height: 100vh;
-  width: 100vw;
-  z-index: 98;
-  background-image: linear-gradient(to right ,rgba(0, 0, 0, 0.555) , rgba(0, 0, 0, 0.705)), url("/assets/04.jpg");
-
-}
-
 
 .container__bg{
 
@@ -23,10 +15,6 @@ body{
   -moz-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
 
 }
-
-
-
-
 
 mat-form-field{
   max-width: 210px;

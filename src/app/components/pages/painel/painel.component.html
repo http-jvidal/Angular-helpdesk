@@ -17,7 +17,7 @@
 
           <mat-form-field class="mat-label" color="warn" >
               <mat-label>Contato</mat-label>
-              <input matInput [(ngModel)]="ticket.contato" name="contato" [ngModelOptions]="{standalone: true}">
+              <input matInput [(ngModel)]="ticket.contato" type="text" value="{{contato}}" readonly="" [ngModelOptions]="{standalone: true}">
           </mat-form-field>
 
 

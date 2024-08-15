@@ -82,6 +82,14 @@ export class UserService {
       );
   }
 
+  rolesUser(username: string): Observable<User>{
+    return this.httpClient.get<User>(this.usersUrl + '/roles/' + username, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      );
+  }
+
   handleError(error: HttpErrorResponse){
     let errorMessage = '';
     if (error.error instanceof ErrorEvent)

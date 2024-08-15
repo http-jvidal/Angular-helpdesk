@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { Ticket } from 'src/app/models/ticket.model';
+import { User } from 'src/app/models/user.model';
+import { AuthService } from 'src/app/services/auth.service';
 import { TicketService } from 'src/app/services/ticket.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -17,7 +19,10 @@ export class PainelComponent {
 
   nome!: string;
   departamento!: string;
-  usuario: string;
+  contato!: string;
+
+  user = {} as User;
+  users: User[] = [];
 
   ticket = {} as Ticket;
   tickets!: Ticket[];
@@ -25,35 +30,33 @@ export class PainelComponent {
   constructor(private ticketService: TicketService,
               private snackBar: MatSnackBar,
               private route: ActivatedRoute,
-              private userService: UserService){
-                this.usuario = "Teste"
+              private userService: UserService,
+              private authService: AuthService){
   }
-  ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      // Recuperar o nome de usuário do localStorage
+  ngOnInit() {
     const username = localStorage.getItem('username');
 
-    if (username !== null) {
-    // Obter informações do usuário com base no nome de usuário
-      this.userService.getUserByUsername(username).subscribe(
-        (userData) => {
+    if (username) {
+      this.userService.getUserByUsername(username).subscribe({
+        next: (userData) => {
           if (userData) {
-            this.nome = userData.name; // Supondo que 'nome' seja o atributo que armazena o nome do usuário
-            this.departamento = userData.departamento.name; // Supondo que 'departamento' seja o atributo que armazena o departamento do usuário
+            this.nome = userData.name;
+            this.departamento = userData.departamento.name;
+            this.contato = userData.contato;
+
           } else {
             console.log('Usuário não encontrado.');
           }
         },
-        (error) => {
+        error: (error) => {
           console.error('Erro ao obter informações do usuário:', error);
         }
-      );
+      });
     } else {
       console.log('Nome de usuário não encontrado no localStorage.');
     }
+  }
 
-      })
-    }
 
   createTicket(): void {
     if(!this.ticket || !this.ticket.detalhes || !this.nome || !this.departamento || !this.ticket.contato) {
@@ -65,6 +68,7 @@ export class PainelComponent {
 
     this.ticket.departamento = this.departamento;
     this.ticket.nome = this.nome;
+    this.user.contato = this.contato;
 
     this.ticketService.createTicket(this.ticket).subscribe( () => {
       this.snackBar.open("Ticket aberto com sucesso", "Fechar", {
@@ -74,12 +78,6 @@ export class PainelComponent {
     }, (error) => {
       console.log("Erro ao criar ticket", error);
     })
-
-
-
-
-
-
   }
 
   cleanForm() {
