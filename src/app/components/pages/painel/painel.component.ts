@@ -58,6 +58,8 @@ export class PainelComponent {
   }
 
 
+
+
   createTicket(): void {
     if(!this.ticket || !this.ticket.detalhes || !this.nome || !this.departamento || !this.ticket.contato) {
       this.snackBar.open("Preencha todos os campos obrigatórios", "Fechar" ,{

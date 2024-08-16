@@ -43,7 +43,7 @@ export class UserService {
   }
 
   getUserByUsername(username: string): Observable<User>{
-    return this.httpClient.get<User>(this.usersUrl + '/find/username/' + username)
+    return this.httpClient.get<User>(this.usersUrl + '/username/' + username)
       .pipe(
         retry(1),
         catchError(this.handleError)

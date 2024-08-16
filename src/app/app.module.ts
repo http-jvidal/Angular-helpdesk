@@ -45,7 +45,7 @@ import { AuthInterceptor } from './components/interceptors/auth.interceptor';
     MatProgressSpinnerModule,
     MatMenuModule
   ],
-  providers: [  
+  providers: [
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: {appearance: 'outline'},

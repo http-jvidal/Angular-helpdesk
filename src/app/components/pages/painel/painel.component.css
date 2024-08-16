@@ -2,7 +2,7 @@
 .container__bg{
 
   position: relative;
-  top: 14rem;
+  top: 8rem;
   display: block;
   margin: auto;
   width: 30rem;
@@ -24,7 +24,6 @@ mat-form-field{
 .mat-label{
   display: flex;
   flex-direction: column;
-  padding-top: .5rem ;
   margin-left: 5.6rem;
   border-radius: 1rem;
   padding-bottom:  0;
