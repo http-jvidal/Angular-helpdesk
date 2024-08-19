@@ -6,17 +6,14 @@ import { AuthGuard } from './services/guards/auth.guard'
 import { PainelComponent } from './components/pages/painel/painel.component';
 import { ChatComponent } from './components/pages/chat/chat.component';
 import { AdminGuard } from './services/guards/admin.guard';
+import { TicketComponent } from './components/ticket/ticket.component';
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
-  {path: 'ticket', component: PainelComponent, canActivate:[AuthGuard]},
+  {path: 'ticket', component: TicketComponent, canActivate:[AuthGuard]},
   {path: 'admin', component: AdminComponent, canActivate: [AdminGuard] },
-  {path: 'chat', component: ChatComponent},
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'ticket', component: PainelComponent, canActivate: [AuthGuard] },
-  { path: 'admin', component: AdminComponent},
-  { path: '**', redirectTo: '/login' }
+  {path: 'painel', component: PainelComponent},
+
 ];
 
 
