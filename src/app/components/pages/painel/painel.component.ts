@@ -33,6 +33,8 @@ export class PainelComponent {
               private userService: UserService,
               private authService: AuthService){
   }
+
+
   ngOnInit() {
     const username = localStorage.getItem('username');
 
@@ -60,30 +62,5 @@ export class PainelComponent {
 
 
 
-  createTicket(): void {
-    if(!this.ticket || !this.ticket.detalhes || !this.nome || !this.departamento || !this.ticket.contato) {
-      this.snackBar.open("Preencha todos os campos obrigatórios", "Fechar" ,{
-        duration: 3000
-      });
-      return;
-    }
-
-    this.ticket.departamento = this.departamento;
-    this.ticket.nome = this.nome;
-    this.user.contato = this.contato;
-
-    this.ticketService.createTicket(this.ticket).subscribe( () => {
-      this.snackBar.open("Ticket aberto com sucesso", "Fechar", {
-        duration: 3000
-      });
-      this.cleanForm();
-    }, (error) => {
-      console.log("Erro ao criar ticket", error);
-    })
-  }
-
-  cleanForm() {
-    this.formDirective.resetForm();
-  }
 
 }

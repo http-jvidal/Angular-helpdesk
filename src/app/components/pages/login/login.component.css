@@ -1,62 +1,53 @@
 
-
-/* Estilos para centralizar o mat-spinner */
-.spinner-container {
-  display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-}
-
 /* Estilos para mudar a cor do mat-spinner */
 .mat-spinner-color {
   color: red; /* Altere para a cor desejada */
 }
 
+body{
+  height: 100vh;
+  width: 100vw;
+  z-index: 98;
+  background-image: linear-gradient(to right ,rgba(0, 0, 0, 0.555) , rgba(0, 0, 0, 0.705)), url("/assets/06.jpg");
+  background-position: center center;
+}
 
+.container{
+  margin-left: -0.8rem;
+}
 .logo{
-  position: relative;
-  top: -2rem;
-  left: 1.2rem;
-  margin-left: 10rem;
-  margin-bottom: 1rem;
+  display: block;
+  margin: 0  auto;
+  margin-bottom: 5rem;
   width: 130px;
   height: 80px;
-  opacity: 1;
 
 }
 
-div{
-    position: relative;
-    top: 14rem;
-    display: block;
-    margin: auto;
-    width: 30rem;
-    height: 50vh;
-    z-index: 98;
-    background-color: #ffffff96;
-    border-radius: 1rem;
-    box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-    -webkit-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-    -moz-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
 
-}
 
 form{
   display: block;
-  padding-top: 6rem;
-  padding-bottom: 5rem;
+  padding-top: 20rem;
   color: white;
+  height: 100vh;
+  width: 35vw;
+    height: 100vh;
+    background-color: #ffffff73;
+    box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
+    -webkit-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
+    -moz-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
+    border-right: 2px solid white;
 }
 
 .mat-label{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin-left: 5.6rem;
-  border-radius: 1rem;
-  padding-bottom:  0;
+  margin: 0 auto;
   color: white;
-  max-width: 20rem;
+  width: 24rem;
+
 }
 
 

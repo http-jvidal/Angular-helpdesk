@@ -7,34 +7,6 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-body{
-  height: 100vh;
-  width: 100vw;
-  z-index: 98;
-  background-image: linear-gradient(to right ,rgba(0, 0, 0, 0.555) , rgba(0, 0, 0, 0.705)), url("/assets/04.jpg");
-
-}
-.login__container{
-  margin-top: 5rem;
-  max-width: 530px;
-  padding: 30px 20px;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-}
-
-section.login__container form{
-  margin: 5.625rem 0;
-}
-
-section.login__container form > h3 {
-  text-align: center;
-  color: #FFF;
-  font-size: 23px;
-  margin: 1.4rem 0;
-}
 
 
 

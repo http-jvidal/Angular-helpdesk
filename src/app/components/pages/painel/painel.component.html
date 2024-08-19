@@ -1,43 +1,46 @@
 <body>
-  <div class="container_nav">
-    <nav class="container_navbar">
-      <ul>
-        <li>Dashboard</li>
-        <li>Tickets</li>
-        <li>Logout</li>
-      </ul>
+  <div class="side-bar__menu">
+    <ul class="side-bar">
+      <li>
+        <a href="">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <mat-icon aria-hidden="false" aria-label="Icon Options" fontIcon="settings"></mat-icon>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <mat-icon aria-hidden="false" aria-label="Account" fontIcon="account_circle"></mat-icon>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <mat-icon aria-hidden="false" aria-label="Account" fontIcon="chat"></mat-icon>
+        </a>
+      </li>
+      <li>
+        <a href=""><mat-icon>headset_mic</mat-icon></a>
+      </li>
+    </ul>
+
+    <div >
+
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <nav class="container--">
+
     </nav>
   </div>
+
+
   <div class="container__bg">
-
-
-  <form #formDirective="ngForm" class="container-s" (ngSubmit)="createTicket()" >
-
-          <mat-form-field class="mat-label" color="warn" style="padding-top: 2rem;" >
-              <mat-label>Nome</mat-label>
-              <input matInput [(ngModel)]="ticket.nome" name="nome"  value="{{nome}}" readonly="">
-          </mat-form-field>
-
-          <mat-form-field  class="mat-label"color="warn"  >
-              <mat-label>Departamento</mat-label>
-              <input matInput [(ngModel)]="ticket.departamento"  type="text"  value="{{departamento}}" readonly="" [ngModelOptions]="{standalone: true}">
-          </mat-form-field>
-
-
-          <mat-form-field class="mat-label" color="warn" >
-              <mat-label>Contato</mat-label>
-              <input matInput [(ngModel)]="ticket.contato" type="text" value="{{contato}}" readonly="" [ngModelOptions]="{standalone: true}">
-          </mat-form-field>
-
-
-          <mat-form-field class="mat-label"color="warn" >
-              <mat-label>Detalhes do chamado</mat-label>
-              <textarea matInput [(ngModel)]="ticket.detalhes" name="detalhes"  [ngModelOptions]="{standalone: true}"></textarea>
-          </mat-form-field>
-
-          <button class="btn btn-success" style="color: black;" >Abrir Chamado</button>
-
-  </form>
 
   </div>
 </body>

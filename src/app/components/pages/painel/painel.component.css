@@ -1,46 +1,26 @@
-
-.container__bg{
-
-  position: relative;
-  top: 8rem;
-  display: block;
-  margin: auto;
-  width: 30rem;
-  height: 50vh;
-  z-index: 98;
-  background-color: #ffffff96;
-  border-radius: 1rem;
-  box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-  -webkit-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-  -moz-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-
+a{
+  text-decoration: none;
+  color: black;
 }
 
-mat-form-field{
-  max-width: 210px;
 
+
+
+.side-bar__menu{
+  width: 45px;
+  background-color: gray;
+  height: 100vh;
 }
 
-.mat-label{
+
+.side-bar{
   display: flex;
   flex-direction: column;
-  margin-left: 5.6rem;
-  border-radius: 1rem;
-  padding-bottom:  0;
-  color: white;
-  max-width: 20rem;
-}
+  justify-content: space-evenly;
+  margin-left: -1.25rem;
+  height: 100vh;
+  text-decoration: none;
+  list-style-type: none;
 
-form
-.custom-snackbar {
-  background-color: black; /* Define a cor de fundo */
-  color: white; /* Define a cor do texto */
-}
 
-button{
-  display: block;
-  margin: auto;
-  background-color: transparent;
-  color: black;
-  border: 1px solid black;
 }

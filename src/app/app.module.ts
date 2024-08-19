@@ -18,7 +18,6 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatMenuModule} from '@angular/material/menu';
 import { PainelComponent } from './components/pages/painel/painel.component';
 import { TicketComponent } from './components/ticket/ticket.component';
-import { AuthInterceptor } from './components/interceptors/auth.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +48,6 @@ import { AuthInterceptor } from './components/interceptors/auth.interceptor';
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: {appearance: 'outline'},
-      useClass: AuthInterceptor
 
     }
   ],
