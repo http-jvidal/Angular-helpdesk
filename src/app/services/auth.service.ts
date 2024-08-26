@@ -8,7 +8,7 @@ import { ErrorHandlerService } from './errorhandler.service';
 })
 export class AuthService {
 
-  private authUrl = "http://localhost:8082/auth";
+  private authUrl = "http://10.10.10.110:8082/auth";
   private readonly TOKEN_KEY = "authToken";
 
   private loggedIn = new BehaviorSubject<boolean>(this.hasToken());

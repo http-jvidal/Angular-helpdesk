@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit{
     }
 
     this.authService.login(this.login, this.senha)?.subscribe( () => {
-      this.router.navigate(['/ticket']);
+      this.router.navigate(['/home']);
       this.snackBar.open("Login efetuado com sucesso", "Fechar", {
         duration: 3000
       });

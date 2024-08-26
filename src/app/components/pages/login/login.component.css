@@ -1,9 +1,3 @@
-
-/* Estilos para mudar a cor do mat-spinner */
-.mat-spinner-color {
-  color: red; /* Altere para a cor desejada */
-}
-
 body{
   height: 100vh;
   width: 100vw;
@@ -15,6 +9,7 @@ body{
 .container{
   margin-left: -0.8rem;
 }
+
 .logo{
   display: block;
   margin: 0  auto;
@@ -32,33 +27,38 @@ form{
   color: white;
   height: 100vh;
   width: 35vw;
-    height: 100vh;
-    background-color: #ffffff73;
-    box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-    -webkit-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-    -moz-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-    border-right: 2px solid white;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.664);
+
+  box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
+  -webkit-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
+  -moz-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
+  border-right: 20px solid rgba(255, 0, 0, 0.466);
 }
 
-.mat-label{
+.mat-form-field{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin: 0 auto;
-  color: white;
   width: 24rem;
+}
 
+mat-label{
+  color: white;
 }
 
 
 button{
   position: relative;
-  left: 20rem;
+  left: 25rem;
   background-color: transparent;
   opacity: 1;
   padding: .5rem;
   border-radius: 1rem;
-  border: 1px solid black;
-  color: black;
+  color: white;
+  background-color: #161515;
+  border: none;
 }
+
 

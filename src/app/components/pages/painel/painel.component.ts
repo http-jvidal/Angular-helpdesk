@@ -45,7 +45,7 @@ export class PainelComponent {
             this.nome = userData.name;
             this.departamento = userData.departamento.name;
             this.contato = userData.contato;
-
+            
           } else {
             console.log('Usuário não encontrado.');
           }

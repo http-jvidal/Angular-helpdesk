@@ -8,11 +8,11 @@ import { ChatComponent } from './components/pages/chat/chat.component';
 import { AdminGuard } from './services/guards/admin.guard';
 import { TicketComponent } from './components/ticket/ticket.component';
 const routes: Routes = [
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: "**", redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'ticket', component: TicketComponent, canActivate:[AuthGuard]},
   {path: 'admin', component: AdminComponent, canActivate: [AdminGuard] },
-  {path: 'painel', component: PainelComponent},
+  {path: 'home', component: PainelComponent, canActivate:[AuthGuard]},
 
 ];
 

@@ -1,46 +1,48 @@
 <body>
-  <div class="side-bar__menu">
-    <ul class="side-bar">
-      <li>
-        <a href="">
-          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <mat-icon aria-hidden="false" aria-label="Icon Options" fontIcon="settings"></mat-icon>
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <mat-icon aria-hidden="false" aria-label="Account" fontIcon="account_circle"></mat-icon>
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <mat-icon aria-hidden="false" aria-label="Account" fontIcon="chat"></mat-icon>
-        </a>
-      </li>
-      <li>
-        <a href=""><mat-icon>headset_mic</mat-icon></a>
-      </li>
-    </ul>
+    <aside class="side-nav__bar">
+      <mat-sidenav-container>
+        <mat-sidenav mode="side" position="start">
+        </mat-sidenav>
+        <mat-sidenav-content>
+          <a routerLink="/home">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+          </a>
+          <mat-icon aria-hidden="false" aria-label="Account">account_circle</mat-icon>
+          <mat-icon aria-hidden="false" aria-label="Chamados Abertos">chat</mat-icon>
+          <mat-icon aria-hidden="false" aria-label="Headset Mic">headset_mic</mat-icon>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    </aside>
 
-    <div >
+    <div class="init__container">
+      <div class="bar__menu">
+        <mat-icon class="icon-add">add_circle</mat-icon>
+      </div>
 
+      <div class="hello">
+        <h1>
+          Olá <span>{{ this.nome}}</span>!
+        </h1>
+
+      </div>
+      <div class="card">
+        <app-card
+          [title]="'Meus Tickets'"
+          [text]="'teste'">
+        </app-card>
+
+        <app-card
+          [title]="'Minha Equipe'"
+          [text]="'teste'">
+        </app-card>
+
+        <app-card
+          [title]="'Minha Equipe'"
+          [text]="'teste'">
+        </app-card>
+
+
+
+      </div>
     </div>
-  </div>
-
-
-
-  <div class="container">
-    <nav class="container--">
-
-    </nav>
-  </div>
-
-
-  <div class="container__bg">
-
-  </div>
 </body>

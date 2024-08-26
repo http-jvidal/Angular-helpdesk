@@ -13,7 +13,7 @@ export class UserService {
   authenticated = false;
 
   constructor(private httpClient: HttpClient) {
-    this.usersUrl = "http://localhost:8082/api/users"
+    this.usersUrl = "http://10.10.10.110:8082/api/users"
   }
 
   httpOptions = {

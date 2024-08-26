@@ -16,8 +16,12 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule} from '@angular/material/card';
 import { PainelComponent } from './components/pages/painel/painel.component';
 import { TicketComponent } from './components/ticket/ticket.component';
+import { CardComponent } from './components/card/card.component';
+import { UserPageModelComponent } from './components/user-page-model/user-page-model.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +29,8 @@ import { TicketComponent } from './components/ticket/ticket.component';
     AdminComponent,
     PainelComponent,
     TicketComponent,
+    CardComponent,
+    UserPageModelComponent,
 
   ],
   imports: [
@@ -42,7 +48,9 @@ import { TicketComponent } from './components/ticket/ticket.component';
     MatButtonModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSidenavModule,
+    MatCardModule
   ],
   providers: [
     {
