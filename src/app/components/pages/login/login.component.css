@@ -1,39 +1,52 @@
-body{
-  height: 100vh;
-  width: 100vw;
-  z-index: 98;
-  background-image: linear-gradient(to right ,rgba(0, 0, 0, 0.555) , rgba(0, 0, 0, 0.705)), url("/assets/06.jpg");
-  background-position: center center;
+
+.bg{
+  background-image: url("/assets/ativo_2.jpg");
+  background-size: contain;
+  background-position: center right;
+  background-repeat: no-repeat;
+
+  margin-left: 20px;
 }
 
 .container{
   margin-left: -0.8rem;
+
+
 }
 
 .logo{
   display: block;
   margin: 0  auto;
-  margin-bottom: 5rem;
-  width: 130px;
-  height: 80px;
+  margin-bottom: 8rem;
+  max-width: 220px;
 
 }
 
-
-
 form{
-  display: block;
-  padding-top: 20rem;
-  color: white;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
   width: 35vw;
   height: 100vh;
-  background-color: rgba(128, 128, 128, 0.664);
+  margin-left: 100px;
+  color: black;
 
-  box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-  -webkit-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-  -moz-box-shadow: -14px 15px 41px 2px rgba(0,0,0,0.45);
-  border-right: 20px solid rgba(255, 0, 0, 0.466);
+}
+
+.container__header{
+  text-align: center;
+  margin-bottom: 8rem;
+
+}
+
+h2{
+  text-align: center;
+  font-size: 45px;
+  font-family: 'Myriad Pro Light';
+  letter-spacing: 4px;
+  color: black;
+  margin-bottom: -2rem;
+
 }
 
 .mat-form-field{
@@ -41,24 +54,41 @@ form{
   flex-direction: column;
   justify-content: space-around;
   margin: 0 auto;
-  width: 24rem;
+  width: 30rem;
+  font-family: 'Myriad Pro Light';
+
 }
 
 mat-label{
-  color: white;
+  font-family: 'Myriad Pro Light';
+  color: black;
 }
 
 
-button{
-  position: relative;
-  left: 25rem;
-  background-color: transparent;
-  opacity: 1;
-  padding: .5rem;
+.button__login{
+  font-family: 'Myriad Pro Light';
+  font-size: 1.2rem;
+  padding: .7rem;
   border-radius: 1rem;
   color: white;
-  background-color: #161515;
+  background-color: black;
   border: none;
+  width: 30rem;
+
+  margin: 2rem auto;
 }
 
+
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+h4{
+  font-family: 'Myriad Pro Semibold';
+  color: black;
+  margin-top: -0.8rem;
+  margin-left: 25rem;
+}
 

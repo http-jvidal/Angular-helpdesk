@@ -8,5 +8,8 @@ export interface User {
     id: number;
     name: string;
   };
-  roles: string[];
+  roles: {
+    id: number;
+    name: string
+  };
 }

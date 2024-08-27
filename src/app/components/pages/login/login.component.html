@@ -1,19 +1,32 @@
-<body >
+<body class="bg">
+
+
     <div class="container">
         <form #formDirective="ngForm"   >
 
-            <img class="logo" src="assets/logo.png" alt="Logo da Belacci" >
-            <mat-form-field class="mat-form-field" color="warn" >
-                <mat-label >Login</mat-label>
-                <input matInput type="text" name="login" class="input1" [(ngModel)]="login" style="color: white;">
+          <div class="container__header">
+              <img class="logo" src="assets/logo.png" alt="Logo da Belacci" >
+              <h2>Bem-Vindo</h2>
+            </div>
+            <mat-form-field class="mat-form-field">
+              <mat-label>Login</mat-label>
+              <input matInput type="text" name="login" class="input1" [(ngModel)]="login" style="color: black;">
             </mat-form-field>
 
-            <mat-form-field class="mat-form-field" color="warn">
-                <mat-label >Senha</mat-label >
-                <input matInput type="password" name="password" class="input1" [(ngModel)]="senha" style="color: white;">
+            <mat-form-field class="mat-form-field" >
+              <mat-label>Senha</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" name="password" class="input1" [(ngModel)]="senha" style="color: black;">
+              <button class="img_hide" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Mostrar ou ocultar senha'" [attr.aria-pressed]="hide">
+                <mat-icon >{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+              </button>
             </mat-form-field>
 
-            <button (click)="logar()" >Fazer Login</button>
+
+            <a href="https://api.whatsapp.com/send?phone=5512997513313&text=Ol%C3%A1,%20esqueci%20minha%20senha,%20sou%20do%20departamento%20de%20%5BNome%20do%20Departamento%5D%20e%20me%20chamo%20%5BNome%5D" target="_blank">
+              <h4>Esqueci minha senha</h4>
+            </a>
+
+            <button class="button__login" (click)="logar()" >Login</button>
         </form>
     </div>
 </body>

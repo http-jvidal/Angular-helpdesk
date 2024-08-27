@@ -27,7 +27,7 @@
           <td *ngIf="user && user.departamento">{{ user.departamento['name'] }}</td>
           <td>{{user.roles}}</td>
 
-  
+
 
           <td>
             <button type="button" class="buttonEdit btn btn-warning btn-sm" (click)="editUser(user)">Editar Usuário</button>
@@ -42,7 +42,7 @@
     <h5 class="card-header">Adicionar/Atualizar usuários</h5>
     <div class="card-body">
       <form id="add-form" (ngSubmit)="saveUser(f)" #f="ngForm" novalidate>
-      
+
         <div class="form-group">
           <label for="name">Nome</label>
           <input type="text" [(ngModel)]="user.name" id="name" name="name" #name="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && name.invalid}" placeholder="Digite o Nome">

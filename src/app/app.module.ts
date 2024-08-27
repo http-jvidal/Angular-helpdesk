@@ -18,19 +18,17 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
-import { PainelComponent } from './components/pages/painel/painel.component';
 import { TicketComponent } from './components/ticket/ticket.component';
 import { CardComponent } from './components/card/card.component';
-import { UserPageModelComponent } from './components/user-page-model/user-page-model.component';
+import { HomeComponent } from './components/pages/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminComponent,
-    PainelComponent,
     TicketComponent,
     CardComponent,
-    UserPageModelComponent,
+    HomeComponent,
 
   ],
   imports: [

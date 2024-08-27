@@ -1,0 +1,53 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+
+
+body, html{
+  height: 100vh;
+  width: 100vw;
+
+  background-image: url("/assets/page_home.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid red;
+}
+.header >.logo{
+  max-height: 55px;
+  margin: 0.5rem 0 0 4rem;
+}
+
+h2{
+  margin: 1.2rem 0 0 1.1rem;
+  font-family: 'Myriad Pro Bold';
+}
+
+.account_icon{
+  position: relative;
+  left: 95rem;
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+
+div.aside{
+  border-color: 2px solid red;
+  height: 100%;
+  width: 100%;
+}
