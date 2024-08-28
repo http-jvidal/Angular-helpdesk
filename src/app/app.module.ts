@@ -21,6 +21,7 @@ import {MatCardModule} from '@angular/material/card';
 import { TicketComponent } from './components/ticket/ticket.component';
 import { CardComponent } from './components/card/card.component';
 import { HomeComponent } from './components/pages/home/home.component';
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,8 @@ import { HomeComponent } from './components/pages/home/home.component';
     MatProgressSpinnerModule,
     MatMenuModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule
   ],
   providers: [
     {

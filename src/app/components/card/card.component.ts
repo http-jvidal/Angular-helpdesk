@@ -9,4 +9,11 @@ export class CardComponent {
   @Input() title: any;
   @Input() subtitle: any;
   @Input() text: any
+
+  tickets = [
+    { status: 'pendentes', quantity: 8 },
+    { status: 'novos', quantity: 6 },
+    { status: 'em atendimento', quantity: 6 },
+    { status: 'parados', quantity: 1 }
+  ];
 }

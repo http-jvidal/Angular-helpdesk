@@ -1,5 +1,34 @@
-mat-card{
-  height: 35vh;
-  margin-top: .8rem;
-  margin-left: .8rem
+.container_main{
+
+  display: flex;
+  flex-direction: row;
+  width: 27vw;
+  height: 25vh;
+  margin: 8rem 40px 0 80px ;
+
+
+
+}
+
+
+.container_main1{
+
+  display: flex;
+  flex-direction: row;
+  width: 27vw;
+  height: 25vh;
+  margin: 8rem 40px 0 0 ;
+
+}
+.container__card{
+  width: 100%;
+
+
+}
+
+.my-tickets-card{
+  border-radius: 2rem;
+  padding-left: 2rem;
+
+  height: 100%;
 }
