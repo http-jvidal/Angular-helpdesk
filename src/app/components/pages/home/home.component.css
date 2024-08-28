@@ -7,47 +7,75 @@
 }
 
 
-
-body, html{
-  height: 100vh;
-  width: 100vw;
-
-  background-image: url("/assets/page_home.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-.header{
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  border-bottom: 2px solid #f44336;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.title {
+  font-size: 24px;
+  color: black;
+  font-family: 'Myriad Pro Bold';
+
+}
+
+.user-icon img {
+  height: 30px;
+  border-radius: 50%;
+  background-color: #333;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 60px); /* 60px é a altura do header */
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #7D7777;
+  
+}
+
+.nav-bar {
+  margin: auto;
+  list-style-type: none; 
+  margin-top: 15rem;
+  margin-left: 2rem;
+
+}
+
+.nav-bar  li {
   display: flex;
   flex-direction: row;
-  align-items: center;
-
-  height: 60px;
-  width: 100%;
-  border-bottom: 1px solid red;
-}
-.header >.logo{
-  max-height: 55px;
-  margin: 0.5rem 0 0 4rem;
+  padding: 15px 20px; /* Adiciona espaçamento interno */
+  color: #fff; /* Cor do texto */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
 }
 
-h2{
-  margin: 1.2rem 0 0 1.1rem;
-  font-family: 'Myriad Pro Bold';
+li > .li{
+  display: block;
+  padding-right: 3rem;
+}
+.nav-bar li:hover {
+  background-color: #6e6e6e; /* Cor de fundo ao passar o mouse */
 }
 
-.account_icon{
-  position: relative;
-  left: 95rem;
-  font-size: 48px;
-  width: 48px;
-  height: 48px;
-  cursor: pointer;
-}
-
-div.aside{
-  border-color: 2px solid red;
-  height: 100%;
-  width: 100%;
+.content {
+  flex-grow: 1;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  margin: 2rem -17rem 2rem 2rem;
 }
