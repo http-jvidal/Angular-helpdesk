@@ -12,6 +12,7 @@ const routes: Routes = [
   {path: 'ticket', component: TicketComponent, canActivate:[AuthGuard]},
   {path: 'admin', component: AdminComponent, canActivate: [AdminGuard] },
   {path: 'home', component: HomeComponent, canActivate:[AuthGuard]},
+  {path: 'chat', component: ChatComponent},
   {path: "**", redirectTo: '/login', pathMatch: 'full'}
 
 

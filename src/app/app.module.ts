@@ -22,6 +22,7 @@ import { TicketComponent } from './components/ticket/ticket.component';
 import { CardComponent } from './components/card/card.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { MatListModule } from '@angular/material/list';
+import { ChatComponent } from './components/chat/chat.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { MatListModule } from '@angular/material/list';
     TicketComponent,
     CardComponent,
     HomeComponent,
+    ChatComponent,
 
   ],
   imports: [

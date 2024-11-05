@@ -1,0 +1,14 @@
+<div>
+    <h2>WEBSOCKET</h2>
+
+
+    <div>
+        <input [(ngModel])="message" type="text" placeholder="Digite uma Mensagem">
+        <button (click)="sendMessage()"></button>
+        <div *ngIf="messages.length > 0">
+            <ul>
+                <li *ngFor="let msg of messages"> {{ msg }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
