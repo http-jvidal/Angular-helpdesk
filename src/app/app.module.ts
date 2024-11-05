@@ -23,6 +23,7 @@ import { CardComponent } from './components/card/card.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { MatListModule } from '@angular/material/list';
 import { ChatComponent } from './components/chat/chat.component';
+import { WebsocketService } from './services/websocket/websocket.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +55,7 @@ import { ChatComponent } from './components/chat/chat.component';
     MatCardModule,
     MatListModule
   ],
-  providers: [
+  providers: [WebsocketService,
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: {appearance: 'outline'},
