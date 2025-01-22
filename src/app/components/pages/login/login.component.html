@@ -14,11 +14,10 @@
             </mat-form-field>
 
             <mat-form-field class="mat-form-field" >
-              <mat-label>Senha</mat-label>
-              <input matInput [type]="hide ? 'password' : 'text'" name="password" class="input1" [(ngModel)]="senha" style="color: black;">
-              <button class="img_hide" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Mostrar ou ocultar senha'" [attr.aria-pressed]="hide">
-                <mat-icon >{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-              </button>
+                <mat-label>Senha</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" name="password" class="input1" [(ngModel)]="senha" style="color: black;">
+                <mat-icon mat-icon-button 
+                matSuffix class="img_hide" (click)="hide = !hide">{{ hide ? 'visibility' : 'visibility_off' }} </mat-icon>
             </mat-form-field>
 
 

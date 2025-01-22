@@ -10,6 +10,7 @@ export class CardComponent {
   @Input() subtitle: any;
   @Input() text: any
 
+
   tickets = [
     { status: 'pendentes', quantity: 8 },
     { status: 'novos', quantity: 6 },

@@ -2,7 +2,7 @@
   <div class="container__card">
     <mat-card class="my-tickets-card">
       <mat-card-header>
-        <mat-card-title>Meus Tickets</mat-card-title>
+        <mat-card-title>{{titlei}}</mat-card-title>
       </mat-card-header>
       <mat-list>
         <mat-list-item *ngFor="let ticket of tickets">
@@ -15,20 +15,5 @@
   </div>
 </div>
 
-<div class="container_main1">
-  <div class="container__card">
-    <mat-card class="my-tickets-card">
-      <mat-card-header>
-        <mat-card-title>Meus Tickets</mat-card-title>
-      </mat-card-header>
-      <mat-list>
-        <mat-list-item *ngFor="let ticket of tickets">
-          <span class="ticket-quantity">{{ ticket.quantity }}</span>
-          <span class="ticket-status">{{ ticket.status }}</span>
-        </mat-list-item>
-      </mat-list>
-    </mat-card>
-
-  </div>
-</div>
+     
 

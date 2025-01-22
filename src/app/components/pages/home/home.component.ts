@@ -12,7 +12,6 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
   nome!: string;
   departamento!: string;
   contato!: string;

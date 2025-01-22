@@ -59,6 +59,10 @@ h2{
 
 }
 
+mat-icon{
+  cursor: pointer;
+}
+
 mat-label{
   font-family: 'Myriad Pro Light';
   color: black;
